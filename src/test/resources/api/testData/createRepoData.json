@@ -1,0 +1,19 @@
+[
+	{
+	  "name": "my-new-repo",
+	  "description": "This is my new repository",
+	  "homepage": "https://github.com",
+	  "private": "false",
+	  "is_template": "true",
+	  "statusCode": "201"
+	  
+	},
+	
+	{
+		"name": "my-second-repo",
+		"description": "This is my second repository",
+		"homepage": "https://github.com",
+		"private": "true",
+		"statusCode": "201"
+	}
+]

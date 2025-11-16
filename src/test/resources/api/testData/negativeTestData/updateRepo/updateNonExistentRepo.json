@@ -1,0 +1,7 @@
+[
+	{
+		"name": "Non-Existent-Repo",
+		"statusCode": 404,
+        "message": "Not Found"
+	}
+]

@@ -1,0 +1,12 @@
+[
+	{
+		"name": "my-new-repo",
+        "description": "Updated description for my e-commerce site repository"
+	},
+	
+	{
+        "name": "my-second-repo",
+        "description": "Updated description for my second repository"
+    }
+	
+]

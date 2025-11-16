@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <listeners>
+	<listener class-name = "ui.Listeners.Listeners" />
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="ui.base.BaseTest"/> 
+      <class name="ui.tests.RegisterAndLogin"/>
+      <!-- Add your cleanup class here -->
+      <class name="ui.tests.TestCleanup"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

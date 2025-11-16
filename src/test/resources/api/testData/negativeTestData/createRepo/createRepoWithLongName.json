@@ -1,0 +1,13 @@
+[
+	{
+	  "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+	  "description": "Overly long name (more than 100 chars)",
+	  "homepage": "https://example.com",
+	  "private": false,
+	  "is_template": false,
+	  "statusCode": "422",
+	  "message": "Repository creation failed.",
+	  "code": "custom",
+	  "field": "name"
+	}
+]

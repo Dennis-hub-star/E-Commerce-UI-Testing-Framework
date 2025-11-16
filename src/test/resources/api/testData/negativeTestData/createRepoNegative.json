@@ -1,0 +1,66 @@
+[
+  {
+    "name": "",
+    "description": "Missing name field should fail",
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 422
+  },
+  {
+    "name": "   ",
+    "description": "Empty name with spaces should fail",
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 422
+  },
+  {
+    "name": "existing-repo",
+    "description": "Repo already exists",
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 422
+  },
+  {
+    "name": "invalid-homepage-repo",
+    "description": "Homepage is not a valid URL",
+    "homepage": "not-a-url",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 422
+  },
+  {
+    "name": "invalid-private-repo",
+    "description": "Private field has non-boolean value",
+    "homepage": "https://example.com",
+    "private": "yes",
+    "is_template": false,
+    "expectedStatus": 400
+  },
+  {
+    "name": "invalid-template-repo",
+    "description": "is_template field has non-boolean value",
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": "no",
+    "expectedStatus": 400
+  },
+  {
+    "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "description": "Overly long name (more than 100 chars)",
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 422
+  },
+  {
+    "name": "null-description-repo",
+    "description": null,
+    "homepage": "https://example.com",
+    "private": false,
+    "is_template": false,
+    "expectedStatus": 201
+  }
+]

@@ -1,0 +1,30 @@
+[
+	{
+	  "email": "jessica.alba@gmail.com",
+	  "password": "jessica@123",
+	  "productName": "iPhone",
+	  "availability": "In Stock",
+	  "productQuantity": "2",
+	  "unitPrice": "101.00",
+	  "subTotal": "202.00",
+	  "flatShippingRate": "5.00",
+	  "total": "207.00",
+	  "agreeToTerms": "yes"
+	  
+	  
+	  
+	},
+	{
+	  "email": "dismond.newton@gmail.com",
+	  "password": "dismond@123",
+	  "productName": "Samsung",
+	  "availability": "In Stock",
+	  "productQuantity": "3",
+	  "unitPrice": "200.00",
+	  "subTotal": "600.00",
+	  "flatShippingRate": "5.00",
+	  "total": "605.00",
+	  "agreeToTerms": "yes"
+	}
+
+]

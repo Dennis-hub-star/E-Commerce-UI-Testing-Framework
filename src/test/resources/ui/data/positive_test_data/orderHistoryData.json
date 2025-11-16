@@ -1,0 +1,27 @@
+[
+	{
+		
+		"email": "jessica.alba@gmail.com",
+	  	"password": "jessica@123",
+		"customerName": "Jessica Alba",
+		"status": "Pending",
+		"totalAmount": "207.00",
+		"orderDate": "31/10/2025",
+		"numberOfItems": "1"
+		
+	},
+	
+	{
+		
+		"email": "dismond.newton@gmail.com",
+	  	"password": "dismond@123",
+		"customerName": "Dismond Newton",
+		"status": "Pending",
+		"totalAmount": "605.00",
+		"orderDate": "31/10/2025",
+		"numberOfItems": "1"
+		
+		
+	}
+	
+]

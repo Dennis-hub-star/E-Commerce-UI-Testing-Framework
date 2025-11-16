@@ -1,0 +1,16 @@
+[
+	
+  {
+   "name": "",
+   "description": "Missing name field should fail",
+   "homepage": "https://example.com",
+   "private": false,
+   "is_template": false,
+   "statusCode": "422",
+   "message": "New repository name must not be blank",
+   "code": "missing_field",
+   "field": "name"
+  
+  }
+ 
+]

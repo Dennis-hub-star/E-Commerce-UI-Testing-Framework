@@ -1,0 +1,18 @@
+[
+
+	{
+		
+		
+	  "name": "newrepo",
+	  "description": "Repo already exists",
+	  "homepage": "https://example.com",
+	  "private": "false",
+	  "is_template": "false",
+	  "statusCode": "422",
+	  "message": "Repository creation failed.",
+	  "code": "custom",
+	  "field": "name"
+	  
+	}
+
+]
