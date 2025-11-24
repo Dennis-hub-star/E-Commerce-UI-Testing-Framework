@@ -35,12 +35,19 @@ public class SearchResultsPage extends UiUtilities {
 	private WebElement displayInstockFileterCheckbox;// *********** DELETE
 
 	By productImage = By.xpath("//*[@class='product-thumb']/div[1]");
+	
+	By noProductsFoundMessage = By.cssSelector("#entry_212469 p");
+	//By outOfStockLabel = By.xpath("//*[@id = 'mz-fss-0-5']/following-sibling::label']");
+	
+	@FindBy(xpath = "//*[@id = 'mz-fss-0-5']/following-sibling::label")
+	WebElement displayOutOfStockFileterCheckbox;
 
 	@FindBy(className = "btn-cart")
 	WebElement addToCartHoverBtn;
 
-	@FindBy(xpath = "//*[@id = 'notification-box-top']/div")
-	WebElement productAddedToCartPopup;
+
+	
+	By productAddedToCartPopup = By.xpath("//*[@id = 'notification-box-top']/div");
 
 	@FindBy(xpath = "//div[@class ='d-flex mb-3 align-items-start']/p")
 	WebElement productAddedToCartMessage;
@@ -58,13 +65,20 @@ public class SearchResultsPage extends UiUtilities {
 		}
 		getElementsAfterSearch();
 	}
+	
+	public void displayOnlyOutOfStockProducts(String availability) throws InterruptedException {
+
+		if (availability.equalsIgnoreCase("Out of Stock")) {
+			displayOutOfStockFileterCheckbox.click();
+		}
+		getElementsAfterSearch();
+	}
 
 	private void getElementsAfterSearch() throws InterruptedException {
 		By productNameLocator = By.xpath("//*[@class='product-thumb']/div[2]/h4/a");
 		By productPriceLocator = By.xpath("//*[@class='product-thumb']/div[2]/div/span");
 
-//		Thread.sleep(2000);
-		waitForElementLocatedBy(productPriceLocator);
+		waitForStalenessThenVisibilityOfElementLocated(productPriceLocator);
 		List<WebElement> prodNames = getElements(productNameLocator);
 		List<WebElement> prodPrices = getElements(productPriceLocator);
 
@@ -82,26 +96,17 @@ public class SearchResultsPage extends UiUtilities {
 
 	public CartPage addProductToCart() {
 		try {
-			// Locate the first product image
 
 			WebElement image = getElements(productImage).get(0);
 
-			// Hover over the product image
 			actions().moveToElement(image).perform();
 
-			// Wait for the "Add to Cart" button to be visible and clickable
-			waitForElementToBeVisible(addToCartHoverBtn);
 			waitUntilElementIsClickable(addToCartHoverBtn);
 
-			// Click the "Add to Cart" button
+			
 			addToCartHoverBtn.click();
 
-			// Wait for the success popup to appear
-			WebElement popup = waitForElementToBeVisible(productAddedToCartPopup);
-			String message = productAddedToCartMessage.getText();
 
-			// Verify the success message
-			assertTrue(message.contains("Success: You have added"));
 		} catch (Exception e) {
 			System.out.println("Failed to add product to cart: " + e.getMessage());
 		}
@@ -110,14 +115,24 @@ public class SearchResultsPage extends UiUtilities {
 	}
 
 	public void verifyThatProductIsAddedToCart() {
-		WebElement popup = waitForElementToBeVisible(productAddedToCartPopup);
+		waitForVisibilityOfElementLocatedBy(productAddedToCartPopup);
 
 		String message = productAddedToCartMessage.getText();
 
 		assertTrue(message.contains("Success: You have added"));
 
-		waitUntilElementIsInvisible(productAddedToCartPopup);
+		waitForInvisibilityOfElementLocatedBy(productAddedToCartPopup);
 
 	}
+	
+	
+	public void verifyThatNoProductWasFound(String expectedMessage) {
+		WebElement messageEl = waitForVisibilityOfElementLocatedBy(noProductsFoundMessage);
+		String actualMessage = messageEl.getText();
+		assertTrue(actualMessage.equalsIgnoreCase(expectedMessage));
+	}
+	
+	
+	
 
 }

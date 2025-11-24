@@ -1,0 +1,123 @@
+[
+  {
+    "scenario": "Empty First Name",
+    "firstName": "",
+    "lastName": "Smith",
+    "email": "valid@example.com",
+    "telephone": "0712345678",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "First Name must be between 1 and 32 characters!"
+  },
+  {
+    "scenario": "Empty Last Name",
+    "firstName": "Dominic",
+    "lastName": "",
+    "email": "valid@example.com",
+    "telephone": "0712345678",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Last Name must be between 1 and 32 characters!"
+  },
+  {
+    "scenario": "Empty Email",
+    "firstName": "Dominic",
+    "lastName": "Smith",
+    "email": "",
+    "telephone": "0712345678",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "E-Mail Address does not appear to be valid!"
+  },
+  {
+    "scenario": "Empty Telephone",
+    "firstName": "Dominic",
+    "lastName": "Smith",
+    "email": "valid@example.com",
+    "telephone": "",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Telephone must be between 3 and 32 characters!"
+  },
+  {
+    "scenario": "Empty Password",
+    "firstName": "Dominic",
+    "lastName": "Smith",
+    "email": "valid@example.com",
+    "telephone": "0712345678",
+    "password": "",
+    "confirmPassword": "",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Password must be between 4 and 20 characters!"
+  },
+  {
+    "scenario": "Telephone Too Short",
+    "firstName": "Dennis",
+    "lastName": "Mamyala",
+    "email": "valid@example.com",
+    "telephone": "07",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Telephone must be between 3 and 32 characters!"
+  },
+  {
+    "scenario": "Telephone Too Long",
+    "firstName": "Dennis",
+    "lastName": "Mamyala",
+    "email": "valid@example.com",
+    "telephone": "07123456789012345678901234567890123",
+    "password": "Pass123!",
+    "confirmPassword": "Pass123!",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Telephone must be between 3 and 32 characters!"
+  },
+  {
+    "scenario": "Password Too Short",
+    "firstName": "Dennis",
+    "lastName": "Mamyala",
+    "email": "valid@example.com",
+    "telephone": "0712345678",
+    "password": "12",
+    "confirmPassword": "12",
+	"subscribeNewsletter": "yes",
+    "acceptPolicy": true,
+    "expectedError": "Password must be between 4 and 20 characters!"
+  },
+  {
+     "scenario": "Password And Confirm Password Mismatch",
+     "firstName": "Dennis",
+     "lastName": "Mamyala",
+     "email": "valid@example.com",
+     "telephone": "0712345678",
+     "password": "Pass123!",
+     "confirmPassword": "Pass123",
+	 "subscribeNewsletter": "yes",
+     "acceptPolicy": true,
+     "expectedError": "Password confirmation does not match password!"
+   },
+   {
+     "scenario": "Privacy Policy Not Accepted",
+     "firstName": "Dennis",
+     "lastName": "Mamyala",
+     "email": "valid@example.com",
+     "telephone": "0712345678",
+     "password": "Pass123!",
+     "confirmPassword": "Pass123!",
+	 "subscribeNewsletter": "yes",
+     "acceptPolicy": false,
+     "expectedError": "Warning: You must agree to the Privacy Policy!"
+   }
+  
+]

@@ -1,5 +1,6 @@
 package ui.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,14 +37,8 @@ public class RegistrationPage extends UiUtilities {
 	@FindBy(id = "input-confirm")
 	private WebElement confirmPasswordField;
 
-//	@FindBy(id = "input-newsletter-yes")
-//	private WebElement subscribeYesRadioButton;
-
 	@FindBy(xpath = "//*[text() = 'Yes']")
 	private WebElement subscribeYesRadioButton;
-
-//	@FindBy(id = "input-newsletter-no")
-//	private WebElement subscribeNoRadioButton;
 
 	@FindBy(xpath = "//*[text() = 'No']")
 	private WebElement subscribeNoRadioButton;
@@ -51,15 +46,19 @@ public class RegistrationPage extends UiUtilities {
 	@FindBy(xpath = "//*[@for = 'input-agree']")
 	private WebElement privacyPolicyCheckbox;
 
-	// @FindBy(css ="input[type='submit'][value='Continue']")
-
 	@FindBy(xpath = "//input[@type = 'submit']")
 	private WebElement continueButton;
+
+	By errorAlert = By.cssSelector(".alert.alert-danger");
+	By errorMessages = By.cssSelector(".text-danger");
+
+	private boolean acceptPolicy;
 
 	public RegistrationSuccessPage register(String firstName, String lastName, String email, String telephone,
 			String password, String confirmPassword, String subscriptionStatus, boolean agreePrivacyPolicy) {
 
 		boolean subscribe = subscriptionStatus.equalsIgnoreCase("yes") ? true : false;
+		acceptPolicy = agreePrivacyPolicy;
 
 		waitForElementToBeVisible(firstNameField);
 		firstNameField.sendKeys(firstName);
@@ -84,4 +83,33 @@ public class RegistrationPage extends UiUtilities {
 
 	}
 
+	public boolean isAcceptPolicy() {
+		return acceptPolicy;
+	}
+
+//	public RegistrationSuccessPage register(String firstName, String lastName, String email, String telephone,
+//			String password, String confirmPassword, String subscriptionStatus, boolean agreePrivacyPolicy) {
+//		
+//	}
+
+	public void verifyThatUserIsNotRegistered(String expectedMessage) {
+		isUserRegistered = false;
+		
+		if(isAcceptPolicy()) {
+			WebElement messageEl = waitForVisibilityOfElementLocatedBy(errorMessages);
+			verifyText(messageEl.getText(), expectedMessage);
+
+		}
+
+//		verifyText(alertEl.getText(), expectedAlert);
+
+		if (!isAcceptPolicy()) {
+			WebElement alertEl = waitForVisibilityOfElementLocatedBy(errorAlert);
+
+			verifyText(alertEl.getText(), expectedMessage);
+
+			System.out.println("************** Is user policy accepted: " + isAcceptPolicy());
+		}
+
+	}
 }

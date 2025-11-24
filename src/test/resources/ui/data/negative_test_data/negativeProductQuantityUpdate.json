@@ -1,0 +1,21 @@
+[
+	{
+	  "email": "jessica.alba@gmail.com",
+	  "password": "jessica@123",
+	  "productName": "iPhone",
+	  "availability": "In Stock",
+	  "productQuantity": "438",
+	  "alertMessage": "Products marked with *** are not available in the desired quantity or not in stock!"
+
+	},
+	{
+	  "email": "dismond.newton@gmail.com",
+	  "password": "dismond@123",
+	  "productName": "Samsung",
+	  "availability": "In Stock",
+	  "productQuantity": "246797543",
+	  "alertMessage": "Products marked with *** are not available in the desired quantity or not in stock!"
+
+	}
+
+]

@@ -35,7 +35,8 @@ public class LoginPage extends UiUtilities {
 	@FindBy(css = ".page-title")
 	private WebElement accountLogoutMessage;
 
-	By loginErrorMessage = By.cssSelector(".alert.alert-danger.alert-dismissible");
+//	By loginErrorMessage = By.cssSelector(".alert.alert-danger.alert-dismissible");
+	By errorAlert = By.cssSelector(".alert.alert-danger");
 
 	public AccountPage login(String email, String password) {
 		sideMenu = new SideMenu(driver);
@@ -49,6 +50,14 @@ public class LoginPage extends UiUtilities {
 		return new AccountPage(driver);
 	}
 	
+	public void verifyThatUserLoginFailed(String alertMessage) {
+		WebElement errorEl = waitForVisibilityOfElementLocatedBy(errorAlert);
+		verifyText(errorEl.getText(), alertMessage);
+		//Warning: No match for E-Mail Address and/or Password.
+	}
+	
+
+
 	/**
 	 * Helper that logs in and immediately searches for a product and adds it to cart.
 	 * This reduces repetition in tests that need to perform the full flow and keeps

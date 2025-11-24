@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import ui.pages.LoginPage;
-import ui.pages.OrderHistoryPage;
 import ui.pages.RegistrationPage;
 import ui.pages.SearchResultsPage;
 import ui.utils.UiUtilities;
@@ -22,11 +21,11 @@ public class NavigationBar extends UiUtilities {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id = "entry_217824")
-	private WebElement wishlistLink;
 
-	@FindBy(id = "entry_217825")
-	private WebElement cartLink;
+	
+	By wishlistLink = By.id("entry_217824");
+
+	By cartLink = By.id("entry_217825");
 
 	@FindBy(xpath = "//input[@placeholder='Search For Products']")
 	private WebElement searchField;
@@ -38,6 +37,7 @@ public class NavigationBar extends UiUtilities {
 //	private WebElement myAccount;
 
 	By myAccountDropdownOptions = By.cssSelector(".mz-sub-menu-96 li");
+	
 
 	public SearchResultsPage searchProduct(String productName) throws InterruptedException {
 
@@ -52,11 +52,11 @@ public class NavigationBar extends UiUtilities {
 	}
 
 	public void goToWishlist() {
-		waitForElementToBeVisible(wishlistLink).click();
+		waitForVisibilityOfElementLocatedBy(wishlistLink).click();
 	}
 
 	public void goToCart() {
-		waitForElementToBeVisible(cartLink).click();
+		waitForVisibilityOfElementLocatedBy(cartLink).click();
 	}
 
 	public LoginPage goToLoginPage() {
@@ -72,24 +72,17 @@ public class NavigationBar extends UiUtilities {
 
 	private void goToMyAccountOption(String optionName) {
 
-		WebElement myAccount = driver.findElement(By.cssSelector(".dropdown-hoverable:last-child"));
+//		WebElement myAccount = driver.findElement(By.cssSelector(".dropdown-hoverable:last-child"));
+		WebElement myAccount = waitForVisibilityOfElementLocatedBy(By.cssSelector(".dropdown-hoverable:last-child"));
 		actions().moveToElement(myAccount).perform();
 
 		WebElement optionToClick = getElements(myAccountDropdownOptions).stream()
 				.filter(option -> option.getText().equalsIgnoreCase(optionName)).findFirst()
 				.orElseThrow(() -> new RuntimeException("Option " + optionName + " not found in My Account dropdown"));
 
-		waitForElementToBeVisible(optionToClick).click();
+		waitUntilElementIsClickable(optionToClick).click();
 	}
 
-//	public OrderHistoryPage goToOderHistoryPage() {
-//		
-//		try {
-//		goToMyAccountOption("My order");
-//		return new OrderHistoryPage(driver);
-//		} catch (Exception e) {
-//			throw new RuntimeException("Could not navigate to Order History page: " + e.getMessage());
-//		}
-//	}
+
 
 }

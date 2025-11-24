@@ -3,6 +3,7 @@ package ui.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,14 +13,13 @@ import ui.utils.UiUtilities;
 
 public class CartPage extends UiUtilities {
 
-	WebDriver driver;
-	String unitPrice;
-	String total;
-	String quantity;
-
-	String subTotal;
-	String shippingRate;
-	String grandTotal;
+	private WebDriver driver;
+	private String unitPrice;
+	private String total;
+	private String quantity;
+	private String subTotal;
+	// private String shippingRate;
+	private String grandTotal;
 
 	CartPage(WebDriver driver) {
 		super(driver);
@@ -37,15 +37,20 @@ public class CartPage extends UiUtilities {
 	@FindBy(xpath = "//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[2]/a")
 	private WebElement productInCart;
 
+	@FindBy(css = ".alert-danger")
+	private WebElement productNotInStockAlert;
+
 	By cartTableHeaders = By.cssSelector(".table-bordered thead tr th");
 
 	By tableRows = By.xpath("//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr");
+	By cartEmpty = By.xpath("//*[text() = 'Shopping Cart']/following-sibling::p");
 
-	@FindBy(xpath = "//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[4]/div/div/button[2]")
-	private WebElement removeItemBtn;
+//	@FindBy(xpath = "//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[4]/div/div/button[2]")
+//	private WebElement removeItemBtn;
 
-	@FindBy(className = "alert-success")
-	private WebElement successAlert;
+//	By removeItemBtn = By.xpath("//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[4]/div/div/button[2]"); 
+
+	By successAlert = By.className("alert-success");
 
 	@FindBy(css = ".buttons a:last-of-type")
 	private WebElement checkoutBtn;
@@ -63,6 +68,7 @@ public class CartPage extends UiUtilities {
 
 		List<WebElement> cartTableRows = getElements(tableRows);
 
+		// Maximum quantity allowed is 437
 		int quantityColumnIndex = getColumnHeaderIndex("Quantity", cartTableHeaders);
 		int unitPriceColumnIndex = getColumnHeaderIndex("Unit Price", cartTableHeaders);
 		int totalColumnIndex = getColumnHeaderIndex("Total", cartTableHeaders);
@@ -99,8 +105,6 @@ public class CartPage extends UiUtilities {
 		double expectedTot = Double.parseDouble(unitPrice) * Integer.parseInt(quantity); // Calculate
 		String expectedTotal = String.valueOf(String.format("%.2f", expectedTot));
 
-		
-																
 		verifyText(expectedUnitPrice, unitPrice);
 		verifyText(expectedTotal, total);
 
@@ -135,13 +139,13 @@ public class CartPage extends UiUtilities {
 	}
 
 	public void verifyThatProductQuantityGotUpdated() {
-		waitForElementToBeVisible(successAlert);
+		WebElement alert = waitForVisibilityOfElementLocatedBy(successAlert);
 		try {
 
-			assertTrue(successAlert.getText().contains("Success: You have modified your shopping cart!"));
+			assertTrue(alert.getText().contains("Success: You have modified your shopping cart!"));
 		} catch (Exception e) {
 			System.out.println("Exception in verifying success alert: " + e.getMessage());
-			System.out.println("The success message is :" + successAlert.getText());
+			System.out.println("The success message is :" + alert.getText());
 		}
 	}
 
@@ -149,4 +153,31 @@ public class CartPage extends UiUtilities {
 		waitUntilElementIsClickable(checkoutBtn);
 		checkoutBtn.click();
 	}
+
+	public void verifyProductNotInStockAlert(String string) {
+		// TODO Auto-generated method stub
+
+		String alertMessage = productNotInStockAlert.getText().split("\n")[0].trim();
+		verifyText(alertMessage, string);
+
+	}
+
+	public void removeItemFromCart() {
+		List<WebElement> cartTableRows = getElements(tableRows);
+
+		for (int r = 1; r <= cartTableRows.size(); r++) {
+			int quantityColumnIndex = getColumnHeaderIndex("Quantity", cartTableHeaders);
+
+			WebElement removeBtn = driver
+					.findElement(By.xpath(getBaseElementLocator(r, quantityColumnIndex) + "/div/div/button[2]"));
+			waitUntilElementIsClickable(removeBtn);
+			removeBtn.click();
+
+			String emptyCartMessage = waitForVisibilityOfElementLocatedBy(cartEmpty).getText();
+
+			verifyText(emptyCartMessage, "Your shopping cart is empty!");
+		}
+
+	}
+
 }

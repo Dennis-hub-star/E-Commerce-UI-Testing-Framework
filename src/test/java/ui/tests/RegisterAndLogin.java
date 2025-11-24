@@ -132,7 +132,7 @@ public class RegisterAndLogin extends BaseTest {
 
 	}
 
-	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = { "orderDetailsConfirmationTest" })
+//	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = { "orderDetailsConfirmationTest" })
 	public void orderHistoryTest(HashMap<String, String> input) throws InterruptedException, IOException {
 		// To be implemented
 		LoginPage userLogin = navigationBar.goToLoginPage();

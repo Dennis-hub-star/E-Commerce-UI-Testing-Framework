@@ -1,0 +1,17 @@
+[
+	{
+	  "email": "jessica.alba@gmail.com",
+	  "password": "jessica@123",
+	  "productName": "@#$%^&*",
+	  "resultsMessage": "There is no product that matches the search criteria.",
+	  "availability": "In Stock"
+	},
+	{
+	  "email": "dismond.newton@gmail.com",
+	  "password": "dismond@123",
+	  "productName": "itemthatdoesnotexist12345",
+	  "resultsMessage": "There is no product that matches the search criteria.",
+	  "availability": "In Stock"
+	}
+
+]

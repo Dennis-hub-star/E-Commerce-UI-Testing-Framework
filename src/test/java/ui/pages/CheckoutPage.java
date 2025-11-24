@@ -1,5 +1,7 @@
 package ui.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +24,10 @@ public class CheckoutPage extends UiUtilities {
 	@FindBy(xpath = "//*[@for='input-payment-address-existing']")
 	private WebElement existingAddressRadioBtn;
 
-	@FindBy(xpath = "//*[@for='c']")
-	private WebElement newAddressRadioBtn;
+//	@FindBy(xpath = "//*[@id = 'input-payment-address-new']/following-sibling::label")
+//	private WebElement newAddressRadioBtn;
+
+	By newAddressRadioBtnBy = By.xpath("//*[@id = 'input-payment-address-new']/following-sibling::label");
 
 	@FindBy(id = "input-shipping-address-same")
 	private WebElement shippingAddressSameAsBillingCheckbox;
@@ -58,6 +62,9 @@ public class CheckoutPage extends UiUtilities {
 	@FindBy(id = "input-payment-zone")
 	private WebElement regionStateDropdown;
 
+	@FindBy(className = "invalid-feedback")
+	private WebElement billingDetailsErrorMessage;
+
 	@FindBy(id = "input-comment")
 	private WebElement commentField;
 
@@ -69,9 +76,13 @@ public class CheckoutPage extends UiUtilities {
 
 	By tableHeaders = By.xpath("//*[@id = 'checkout-cart']/table/thead/tr/th");
 	By tableRows = By.xpath("//*[@id = 'checkout-cart']/table/tbody/tr");
+	By dropdownOption = By.xpath("//option[text() = 'Gauteng']");
+	By cartEmpty = By.xpath("//*[text() = 'Shopping Cart']/following-sibling::p");
 
 	public void fillInBillingDetails(String firstName, String lastName, String company, String address1,
 			String address2, String city, String postcode, String country, String regionState) {
+
+		waitForVisibilityOfElementLocatedBy(newAddressRadioBtnBy).click();
 
 		firstNameField.clear();
 		firstNameField.sendKeys(firstName);
@@ -96,8 +107,16 @@ public class CheckoutPage extends UiUtilities {
 
 		selectFromDropdown(countryDropdown, country);
 
-		// waitUntilElementIsClickable(regionStateDropdown);
-		selectFromDropdown(regionStateDropdown, regionState);
+		if (!country.equalsIgnoreCase(" --- Please Select --- ")) {
+			waitForPresenceOfElementLocatedBy(dropdownOption);
+			selectFromDropdown(regionStateDropdown, regionState);
+		}
+
+	}
+
+	public void verifyErrorMessageForMandatoryBillingDetails(String expectedMessage) {
+
+		verifyText(expectedMessage, billingDetailsErrorMessage.getText().trim());
 
 	}
 
@@ -110,20 +129,11 @@ public class CheckoutPage extends UiUtilities {
 
 	public void acceptTermsAndConditions(String accept) {
 		waitUntilElementIsClickable(termsAndConditionsCheckbox);
-		// WebElement yesRadio = driver.findElement(By.id("input-newsletter-yes"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", termsAndConditionsCheckbox);
 
 		if (accept.equalsIgnoreCase("yes")) {
 			termsAndConditionsCheckbox.click();
 		}
-
-		// THERE SHOULD BE A CONTINUE BUTTON HERE, WHERE IS IT????
-		// termsAndConditionsCheckbox.click();
-//		if (!termsAndConditionsCheckbox.isSelected()) {
-//			termsAndConditionsCheckbox.click();
-//		}
-
-//		return new OrderConfirmPage(driver);
 
 	}
 
@@ -143,7 +153,7 @@ public class CheckoutPage extends UiUtilities {
 		int unitPriceColumnIndex = getColumnHeaderIndex("Unit Price", tableHeaders);
 		int totalColumnIndex = getColumnHeaderIndex("Total", tableHeaders);
 
-		java.util.List<WebElement> checkoutTableRows = getElements(tableRows);
+		List<WebElement> checkoutTableRows = getElements(tableRows);
 
 		for (int r = 1; r <= checkoutTableRows.size(); r++) {
 
@@ -189,6 +199,24 @@ public class CheckoutPage extends UiUtilities {
 
 	private String getBaseElementLocator(int rowIndex, int columnIndex) {
 		return "//*[@id = 'checkout-cart']/table/tbody/tr[" + rowIndex + "]/td[" + columnIndex + "]";
+	}
+
+	public void removeItemFromCheckout() {
+		// To be implemented
+
+		// *[@id = 'checkout-cart']/table/tbody/tr[1]/td[3]/div/div/button[2]
+		List<WebElement> checkoutTableRows = getElements(tableRows);
+		for (int r = 1; r <= checkoutTableRows.size(); r++) {
+			WebElement removeBtn = driver.findElement(By.xpath(getBaseElementLocator(r, 3) + "/div/div/button[2]"));
+			removeBtn.click();
+			// waitForInvisibilityOfElementLocatedBy(By.xpath(getBaseElementLocator(r, 1)));
+		}
+
+		String emptyCartMessage = waitForVisibilityOfElementLocatedBy(cartEmpty).getText();
+
+		//assertTrue(emptyCartMessage.contains("Your shopping cart is empty!"));
+		verifyText(emptyCartMessage, "Your shopping cart is empty!");
+
 	}
 
 }

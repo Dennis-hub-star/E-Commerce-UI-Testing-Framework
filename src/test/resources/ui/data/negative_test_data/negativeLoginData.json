@@ -1,0 +1,68 @@
+[
+  {
+    "scenario": "Empty Email",
+    "email": "",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Empty Password",
+    "email": "jessica.alba@gmail.com",
+    "password": "",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Both Fields Empty",
+    "email": "",
+    "password": "",
+    "expectedAlert": "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+  },
+  {
+    "scenario": "Invalid Email Missing @ Symbol",
+    "email": "jessica.albagmail.com",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Invalid Email Missing Domain",
+    "email": "jessica.alba@",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Invalid Email Missing TLD",
+    "email": "jessica.alba@gmail",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Whitespace Only Email",
+    "email": "   ",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+  },
+  {
+    "scenario": "Unregistered Email",
+    "email": "notregistered@example.com",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Incorrect Password",
+    "email": "jessica.alba@gmail.com",
+    "password": "jessica@321#",
+    "expectedAlert": "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+  },
+  {
+    "scenario": "Email Too Long",
+    "email": "aVeryLongEmailAddress_abcdefghijklmnopqrstuvwxyz12345678901234567890@example.com",
+    "password": "jessica@123",
+    "expectedAlert": "Warning: No match for E-Mail Address and/or Password."
+  },
+  {
+    "scenario": "Password Too Long",
+    "email": "jessica.alba@gmail.com",
+    "password": "aVeryLongPassword1234567890123456789012345678901234567890",
+    "expectedAlert": "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+  }
+]

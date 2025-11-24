@@ -1,35 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-15T23:54:19 SAST" name="Default suite" finished-at="2025-11-15T23:55:01 SAST" duration-ms="42361">
+  <suite started-at="2025-11-24T04:17:49 SAST" name="Default suite" finished-at="2025-11-24T04:40:49 SAST" duration-ms="1379663">
     <groups>
     </groups>
-    <test started-at="2025-11-15T23:54:19 SAST" name="Default test" finished-at="2025-11-15T23:55:01 SAST" duration-ms="42361">
-      <class name="api.test.negativeTests.DeleteRepoNegativeTest">
-        <test-method signature="deleteNonExistentRepo(java.util.HashMap)[pri:0, instance:api.test.negativeTests.DeleteRepoNegativeTest@6a6cb05c]" started-at="2025-11-15T23:54:24 SAST" name="deleteNonExistentRepo" data-provider="deleteNonExistentRepoProvider" finished-at="2025-11-15T23:55:00 SAST" duration-ms="35245" status="PASS">
+    <test started-at="2025-11-24T04:17:49 SAST" name="Default test" finished-at="2025-11-24T04:40:49 SAST" duration-ms="1379663">
+      <class name="ui.tests.negativeTests.Checkout">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:17:52 SAST" name="launchApplication" finished-at="2025-11-24T04:18:47 SAST" duration-ms="55282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:18:47 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:20:41 SAST" duration-ms="114188" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Non-Existent-Repo, message=Not Found, statusCode=404}]]>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=First Name must be between 1 and 32 characters!, availability=In Stock, productName=iPhone, firstName=, password=jessica@123, productQuantity=2, scenario=Empty First Name, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteNonExistentRepo -->
-        <test-method signature="deleteRepoWithoutName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.DeleteRepoNegativeTest@6a6cb05c]" started-at="2025-11-15T23:55:00 SAST" name="deleteRepoWithoutName" data-provider="deleteRepoWithoutNameProvider" finished-at="2025-11-15T23:55:01 SAST" duration-ms="908" status="PASS">
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:20:41 SAST" name="tearDown" finished-at="2025-11-24T04:20:45 SAST" duration-ms="3093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:20:45 SAST" name="launchApplication" finished-at="2025-11-24T04:21:14 SAST" duration-ms="29194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:21:14 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:23:19 SAST" duration-ms="125299" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=, message=Not Found, statusCode=404}]]>
+                <![CDATA[{lastName=, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Last Name must be between 1 and 32 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Empty Last Name, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteRepoWithoutName -->
-      </class> <!-- api.test.negativeTests.DeleteRepoNegativeTest -->
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:19 SAST" name="tearDown" finished-at="2025-11-24T04:23:21 SAST" duration-ms="1700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:21 SAST" name="launchApplication" finished-at="2025-11-24T04:23:56 SAST" duration-ms="35028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:56 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:25:42 SAST" duration-ms="106117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=, expected=Address 1 must be between 3 and 128 characters!, availability=In Stock, productName=iPhone, firstName=John, password=jessica@123, productQuantity=2, scenario=Empty Address 1, company=TechCorp, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:25:42 SAST" name="tearDown" finished-at="2025-11-24T04:26:05 SAST" duration-ms="22909" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:26:05 SAST" name="launchApplication" finished-at="2025-11-24T04:26:39 SAST" duration-ms="34384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:26:39 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:28:40 SAST" duration-ms="120456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=, address1=123 Main St, expected=City must be between 2 and 128 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Empty City, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:28:40 SAST" name="tearDown" finished-at="2025-11-24T04:28:41 SAST" duration-ms="1531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:28:41 SAST" name="launchApplication" finished-at="2025-11-24T04:29:45 SAST" duration-ms="64084" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:29:45 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:32:43 SAST" duration-ms="177465" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country= --- Please Select --- , agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Please select a country!, availability=In Stock, productName=iPhone, firstName=John, password=jessica@123, productQuantity=2, scenario=Country Not Selected, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:32:43 SAST" name="tearDown" finished-at="2025-11-24T04:33:12 SAST" duration-ms="29127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:33:12 SAST" name="launchApplication" finished-at="2025-11-24T04:33:44 SAST" duration-ms="31583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:33:44 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:35:35 SAST" duration-ms="111229" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Please select a region / state!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Region Not Selected, company=, postCode=0001, region= --- Please Select --- , email=dismond.newton@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:35:35 SAST" name="tearDown" finished-at="2025-11-24T04:35:39 SAST" duration-ms="4412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:35:39 SAST" name="launchApplication" finished-at="2025-11-24T04:36:12 SAST" duration-ms="33217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:36:12 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:38:09 SAST" duration-ms="116572" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=First Name must be between 1 and 32 characters!, availability=In Stock, productName=iPhone, firstName=JohnJohnJohnJohnJohnJohnJohnJohnJohnJohn, password=jessica@123, productQuantity=2, scenario=Extremely Long First Name, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:09 SAST" name="tearDown" finished-at="2025-11-24T04:38:15 SAST" duration-ms="5505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:15 SAST" name="launchApplication" finished-at="2025-11-24T04:38:53 SAST" duration-ms="38051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:53 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:40:45 SAST" duration-ms="112327" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=ThisAddressIsWayTooLongForTheSystemToAcceptAndShouldTriggerValidationErrorBecauseItExceeds128Characters123456789012345fjdjdjhdhdeheuedudjcnsksosidjhdfkjrflrpeioeuehendmcjxusyhdnfjfjedhdhgdxndjfkfgtjrjrjhjhrjrjrsnbd, expected=Address 1 must be between 3 and 128 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Extremely Long Address 1, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeCheckoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:40:45 SAST" name="tearDown" finished-at="2025-11-24T04:40:48 SAST" duration-ms="3091" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ui.tests.negativeTests.Checkout -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,8 +1,6 @@
 package ui.base;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,10 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import common.Utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ui.components.NavigationBar;
 import ui.pages.HomePage;
-import ui.utils.UiUtilities;
 
 public class BaseTest {
 
@@ -25,18 +23,10 @@ public class BaseTest {
 
 	public WebDriver initializeDriver() throws IOException {
 
-		//Properties props = new Properties();
 
-		// Converting the file to input stream
-		// The the file path of the properties file should be passed in as an argument
-		// We use this System.getProperty("user.dir") to shorted the file path
-		//FileInputStream fileConversion = new FileInputStream(
-				//System.getProperty("user.dir") + "/src/test/resources/ui/properties/globalData.properties");
-		// This requires an input stream as an argument
-		//props.load(fileConversion);
 		
 		String filePath = System.getProperty("user.dir") + "/src/test/resources/ui/properties/globalData.properties";
-		String prop = UiUtilities.getGlobalVariables("browser", filePath);
+		String prop = Utilities.getGlobalVariables("browser", filePath);
 		// Reading/getting properties coming from maven
 		String browser = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop;
@@ -77,6 +67,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 //		homePage = new HomePage(driver);
 		navigationBar = new NavigationBar(driver);
+		
 	}
 
 	@AfterMethod

@@ -1,5 +1,6 @@
 package ui.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,17 +26,20 @@ public class HomePage extends UiUtilities {
 	@FindBy(css = ".dropdown-hoverable:last-child")
 	private WebElement myAccount; // *********** delete
 
-	@FindBy(css = ".mz-sub-menu-96 li:first-child")
-	private WebElement login; // *********** delete
+//	@FindBy(css = ".mz-sub-menu-96 li:first-child")
+//	private WebElement login; // *********** delete
+	
+	By login = By.cssSelector(".mz-sub-menu-96 li:first-child");
+//
+//	@FindBy(css = ".mz-sub-menu-96 li:last-child")
+//	private WebElement register;  // *********** delete
 
-	@FindBy(css = ".mz-sub-menu-96 li:last-child")
-	private WebElement register;  // *********** delete
-
+	By register = By.cssSelector(".mz-sub-menu-96 li:last-child");
 	public RegistrationPage goToRegistrationPage() {
 
 		actions().moveToElement(myAccount).perform();
 
-		waitForElementToBeVisible(register).click();
+		waitForVisibilityOfElementLocatedBy(register).click();
 
 		return new RegistrationPage(driver);
 
@@ -58,7 +62,7 @@ public class HomePage extends UiUtilities {
 	public LoginPage goToLoginPage() {
 
 		actions().moveToElement(myAccount).perform();
-		waitForElementToBeVisible(login).click();
+		waitForVisibilityOfElementLocatedBy(login).click();
 
 		return new LoginPage(driver);
 

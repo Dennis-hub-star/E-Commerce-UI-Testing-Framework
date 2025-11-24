@@ -1,0 +1,18 @@
+[
+	{
+	  "email": "jessica.alba@gmail.com",
+	  "password": "jessica@123",
+	  "productName": "Iphone",
+	  "availability": "Out Of Stock",
+	  "alertMessage": "Products marked with *** are not available in the desired quantity or not in stock!"
+
+	},
+	{
+	  "email": "dismond.newton@gmail.com",
+	  "password": "dismond@123",
+	  "productName": "MacBook",
+	  "availability": "Out Of Stock",
+	  "alertMessage": "Products marked with *** are not available in the desired quantity or not in stock!"
+	}
+
+]
