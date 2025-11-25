@@ -46,14 +46,12 @@ public class LoginPage extends UiUtilities {
 		passwordField.sendKeys(password);
 		loginButton.click();
 
-//		return new SearchResultsPage(driver);
 		return new AccountPage(driver);
 	}
 	
 	public void verifyThatUserLoginFailed(String alertMessage) {
 		WebElement errorEl = waitForVisibilityOfElementLocatedBy(errorAlert);
 		verifyText(errorEl.getText(), alertMessage);
-		//Warning: No match for E-Mail Address and/or Password.
 	}
 	
 

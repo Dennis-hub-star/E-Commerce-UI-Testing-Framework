@@ -1,4 +1,4 @@
-package ui.tests;
+package ui.tests.positiveTests;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,9 +19,8 @@ import ui.pages.SearchResultsPage;
 
 public class RegisterAndLogin extends BaseTest {
 
-	// static String email;
 
-//	@Test(dataProvider = "validRegistrationData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "validRegistrationData", dataProviderClass = DataProviders.class)
 	public void test(HashMap<String, String> input) {
 
 		boolean agreePrivacyPolicy = Boolean.parseBoolean(input.get("agreePrivacyPolicy"));
@@ -36,63 +35,14 @@ public class RegisterAndLogin extends BaseTest {
 
 	}
 
-//	@Test(dataProvider = "validLoginData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "validLoginData", dataProviderClass = DataProviders.class)
 	public void testLogin(HashMap<String, String> input) {
 
 		LoginPage userLogin = navigationBar.goToLoginPage();
 		userLogin.login(input.get("email"), input.get("password"));
 		userLogin.verifyThatUserLoggedIn();
-//		userLogin.userLogout();
-//		userLogin.verifyThatUserLoggedOut();
-
-	}
-
-//	@Test(dependsOnMethods =  {"testLogin"} )
-	public void testSearchAndAddProductToCart(HashMap<String, String> input) throws InterruptedException {
-
-//		LoginPage userLogin = navigationBar.goToLoginPage();
-//		SearchResultsPage searchResults = userLogin.login(input.get("email"), input.get("password"));
-		SearchResultsPage searchResults = navigationBar.searchProduct("Iphone");
-		searchResults.verifyThatProductIsInResults();
-		searchResults.addProductToCart();
-		searchResults.verifyThatProductIsAddedToCart();
-
-	}
-
-//	@Test(dataProvider = "getValidLoginData")
-	public void editCartTest(HashMap<String, String> input) throws InterruptedException {
-		// To be implemented
-		LoginPage userLogin = homePage.goToLoginPage();
-		userLogin.login(input.get("email"), input.get("password"));
-		SearchResultsPage searchResults = navigationBar.searchProduct("Iphone");
-//		searchResults.displayOnlyInStockProducts();
-		searchResults.verifyThatProductIsInResults();
-		CartPage cartPage = searchResults.addProductToCart();
-		searchResults.verifyThatProductIsAddedToCart();
-
-		cartPage.goToCartPage();
-		cartPage.editProductQuantity("2");
-		cartPage.verifyThatProductQuantityGotUpdated();
-
-	}
-
-//	@Test(dataProvider = "getValidLoginData")
-	public void editOrderDetailsInCheckoutTest(HashMap<String, String> input) throws InterruptedException {
-		// To be implemented
-		LoginPage userLogin = navigationBar.goToLoginPage();
-		userLogin.login(input.get("email"), input.get("password"));
-		SearchResultsPage searchResults = navigationBar.searchProduct("Iphone");
-		searchResults.verifyThatProductIsInResults();
-		CartPage cartPage = searchResults.addProductToCart();
-		searchResults.verifyThatProductIsAddedToCart();
-
-		cartPage.goToCartPage();
-		CheckoutPage checkout = cartPage.editProductQuantity("2");
-		cartPage.verifyThatProductQuantityGotUpdated();
-		cartPage.goToCheckoutPage();
-
-//		checkout.acceptTermsAndConditions();
-		checkout.proceedToConfirmationPage();
+		userLogin.userLogout();
+		userLogin.verifyThatUserLoggedOut();
 
 	}
 
@@ -132,17 +82,13 @@ public class RegisterAndLogin extends BaseTest {
 
 	}
 
-//	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = { "orderDetailsConfirmationTest" })
+	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = { "orderDetailsConfirmationTest" })
 	public void orderHistoryTest(HashMap<String, String> input) throws InterruptedException, IOException {
-		// To be implemented
 		LoginPage userLogin = navigationBar.goToLoginPage();
 		AccountPage accountPage = userLogin.login(input.get("email"), input.get("password"));
 		OrderHistoryPage orderHistory = accountPage.goToOrderHistory();
-		orderHistory.validateOrderHistoryDetails(input.get("customerName"), input.get("status"), input.get("totalAmount"),
-				input.get("numberOfItems"));
-
-//		OrderHistoryPage orderHistory = navigationBar.goToOderHistoryPage();
-//		orderHistory.veryfyOrderHistory();
+		orderHistory.validateOrderHistoryDetails(input.get("customerName"), input.get("status"),
+				input.get("totalAmount"), input.get("numberOfItems"));
 
 	}
 

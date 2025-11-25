@@ -21,8 +21,6 @@ public class NavigationBar extends UiUtilities {
 		PageFactory.initElements(driver, this);
 	}
 
-
-	
 	By wishlistLink = By.id("entry_217824");
 
 	By cartLink = By.id("entry_217825");
@@ -33,11 +31,7 @@ public class NavigationBar extends UiUtilities {
 	@FindBy(xpath = "//*[@class = 'search-button']")
 	private WebElement searchButton;
 
-//	@FindBy(css = ".dropdown-hoverable:last-child")
-//	private WebElement myAccount;
-
 	By myAccountDropdownOptions = By.cssSelector(".mz-sub-menu-96 li");
-	
 
 	public SearchResultsPage searchProduct(String productName) throws InterruptedException {
 
@@ -72,7 +66,6 @@ public class NavigationBar extends UiUtilities {
 
 	private void goToMyAccountOption(String optionName) {
 
-//		WebElement myAccount = driver.findElement(By.cssSelector(".dropdown-hoverable:last-child"));
 		WebElement myAccount = waitForVisibilityOfElementLocatedBy(By.cssSelector(".dropdown-hoverable:last-child"));
 		actions().moveToElement(myAccount).perform();
 
@@ -82,7 +75,5 @@ public class NavigationBar extends UiUtilities {
 
 		waitUntilElementIsClickable(optionToClick).click();
 	}
-
-
 
 }

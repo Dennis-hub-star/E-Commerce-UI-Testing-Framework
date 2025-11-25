@@ -12,34 +12,28 @@ import ui.utils.UiUtilities;
 
 public class APIUtilities {
 
-	private static String filePath = System.getProperty("user.dir") + "/src/test/resources/api/global.properties";
+	private static String file = "api.global";
 
 	public static RequestSpecification requestSpecification() throws IOException {
 
-		String token = Utilities.getGlobalVariables("token", filePath);
+		String token = Utilities.getGlobalValue("token", file);
 
 		HashMap<String, String> headers = new HashMap<String, String>();
 		headers.put("Accept", "application/vnd.github+json");
 		headers.put("X-GitHub-Api-Version", "2022-11-28");
-		// "Authorization", "Bearer " + token
 		headers.put("Authorization", "Bearer " + token);
 		RequestSpecification builder = new RequestSpecBuilder()
-				.setBaseUri(Utilities.getGlobalVariables("base_url", filePath)).addHeaders(headers).build();
+				.setBaseUri(Utilities.getGlobalValue("base_url", file)).addHeaders(headers).build();
 
-		// System.out.println(getGlobalVariables("base_url"));
 		return builder;
 
 	}
 
 	public static Map<String, String> getPathParams(String repoName) throws IOException {
-		// Object context = repoName.getSuite().getAttribute("repoName");
 
 		Map<String, String> pathParams = new HashMap<String, String>();
-		pathParams.put("owner", Utilities.getGlobalVariables("owner", filePath)); // Replace with actual username
-		pathParams.put("repo", repoName); // Replace with actual repository name
-
-		System.out.println("THIS IS YOUR FIRST PATH PARAMETER:  " + pathParams.get("owner"));
-		System.out.println("THIS IS YOUR SECOND PATH PARAMETER:  " + pathParams.get("repo"));
+		pathParams.put("owner", Utilities.getGlobalValue("owner", "api.global")); 
+		pathParams.put("repo", repoName); 
 		return pathParams;
 	}
 

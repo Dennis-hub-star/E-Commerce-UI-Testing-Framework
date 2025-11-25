@@ -20,27 +20,22 @@ public class BaseTest {
 	public WebDriver driver;
 	protected HomePage homePage;
 	protected NavigationBar navigationBar;
+	private String file = "ui.properties.globalData";
 
 	public WebDriver initializeDriver() throws IOException {
 
 
 		
-		String filePath = System.getProperty("user.dir") + "/src/test/resources/ui/properties/globalData.properties";
-		String prop = Utilities.getGlobalVariables("browser", filePath);
-		// Reading/getting properties coming from maven
+		String file = "ui.properties.globalData";
+		String prop = Utilities.getGlobalValue("browser", file);
 		String browser = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop;
-		// String browser = "firefox";
-
 		if (browser.contains("chrome")) {
-			// ************** For Headless Mode *******************
-
 			ChromeOptions options = new ChromeOptions();
-			// ****************************************************
 			WebDriverManager.chromedriver().setup();
 
 			if (browser.contains("headless")) {
-				options.addArguments("headless"); // ************** For Headless Mode *******************
+				options.addArguments("headless"); 
 			}
 			driver = new ChromeDriver(options);
 			
@@ -63,43 +58,17 @@ public class BaseTest {
 	@BeforeMethod
 	public void launchApplication() throws IOException {
 		driver = initializeDriver();
-		driver.get("https://ecommerce-playground.lambdatest.io/index.php?route=common/home");
+		driver.get(Utilities.getGlobalValue("siteURL", file));
 		driver.manage().window().maximize();
-//		homePage = new HomePage(driver);
 		navigationBar = new NavigationBar(driver);
 		
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		// driver.quit();
 		driver.close();
 	}
 
-//	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
-//
-//		// readFileToString --> Json file content past would get converted string
-//		// We past this because there a deprecation error on readFileToString method. So
-//		// it was basically crossed
-//		String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
-//
-//		// Converting the string to hashmap and we need to get a dependency called
-//		// ********************** jackson data bind FROM maven repository ******************
-//
-//		ObjectMapper mapper = new ObjectMapper();
-//
-//		// From ObjectMapper class there is a readValue method which we use to read a
-//		// string and then covert it to a hashmap
-//		// This readValue method expects two arguments, the first argument is the string
-//		// to be converted, the second argument is responsible for how the string should
-//		// be converted
-//		// So the second argument basically says create two hashmaps and then put them
-//		// inside a list
-//		List<HashMap<String, String>> data = mapper.readValue(jsonContent,
-//				new TypeReference<List<HashMap<String, String>>>() {
-//				});
-//
-//		return data;
-//	}
+
 
 }

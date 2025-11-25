@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ui.tests.negativeTests.SearchProduct">
+      <class name="ui.tests.negativeTests.CheckoutTest">
         <methods>
           <include name="tearDown"/>
           <include name="launchApplication"/>
-          <include name="addOutOfStockProductToCart" invocation-numbers="1"/>
+          <include name="negativeCheckoutTest"/>
         </methods>
-      </class> <!-- ui.tests.negativeTests.SearchProduct -->
+      </class> <!-- ui.tests.negativeTests.CheckoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

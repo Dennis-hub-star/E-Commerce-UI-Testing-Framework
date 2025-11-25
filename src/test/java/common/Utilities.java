@@ -1,10 +1,9 @@
 package common;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
+import java.util.ResourceBundle;
 
 import ui.utils.UiUtilities;
 
@@ -21,16 +20,8 @@ public class Utilities {
 		return prepared;
 	}
 	
-	
-	public static String getGlobalVariables(String property, String filePath) throws IOException {
-
-		Properties prop = new Properties();
-
-		FileInputStream fis = new FileInputStream(filePath);
-		prop.load(fis);
-		//System.out.println(prop.getProperty(token));
-
-		return prop.getProperty(property);
-
+	public static String getGlobalValue(String key, String fileName) {
+	    return ResourceBundle.getBundle(fileName).getString(key);
 	}
+
 }

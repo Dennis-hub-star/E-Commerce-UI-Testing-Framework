@@ -11,7 +11,6 @@ import ui.utils.UiUtilities;
 public class RegistrationPage extends UiUtilities {
 
 	WebDriver driver;
-	private boolean isUserRegistered;
 
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
@@ -87,21 +86,13 @@ public class RegistrationPage extends UiUtilities {
 		return acceptPolicy;
 	}
 
-//	public RegistrationSuccessPage register(String firstName, String lastName, String email, String telephone,
-//			String password, String confirmPassword, String subscriptionStatus, boolean agreePrivacyPolicy) {
-//		
-//	}
-
 	public void verifyThatUserIsNotRegistered(String expectedMessage) {
-		isUserRegistered = false;
-		
-		if(isAcceptPolicy()) {
+
+		if (isAcceptPolicy()) {
 			WebElement messageEl = waitForVisibilityOfElementLocatedBy(errorMessages);
 			verifyText(messageEl.getText(), expectedMessage);
 
 		}
-
-//		verifyText(alertEl.getText(), expectedAlert);
 
 		if (!isAcceptPolicy()) {
 			WebElement alertEl = waitForVisibilityOfElementLocatedBy(errorAlert);

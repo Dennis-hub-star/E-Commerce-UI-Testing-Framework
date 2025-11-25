@@ -1,4 +1,4 @@
-package ui.tests;
+package ui.tests.negativeTests;
 
 import java.util.HashMap;
 

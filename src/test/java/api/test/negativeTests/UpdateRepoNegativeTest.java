@@ -19,7 +19,6 @@ public class UpdateRepoNegativeTest {
 
 		CreateRepo payload = CreateRepoPayload.updateRepoDescription(input);
 
-//		Response reponse = UserEndPoints.updateRepo(payload);
 		GetUpdateDeleteNegative res = UserEndPoints.updateRepo(payload).as(GetUpdateDeleteNegative.class);
 		Assert.assertEquals(res.getMessage(), input.get("message"));
 
@@ -30,7 +29,6 @@ public class UpdateRepoNegativeTest {
 
 		CreateRepo payload = CreateRepoPayload.updateRepoDescription(input);
 
-//		Response reponse = UserEndPoints.updateRepo(payload);
 		GetUpdateDeleteNegative res = UserEndPoints.updateRepo(payload).as(GetUpdateDeleteNegative.class);
 		Assert.assertEquals(res.getMessage(), input.get("message"));
 		Assert.assertEquals(res.getStatus(), input.get("statusCode"));

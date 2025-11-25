@@ -18,7 +18,6 @@ public class CartPage extends UiUtilities {
 	private String total;
 	private String quantity;
 	private String subTotal;
-	// private String shippingRate;
 	private String grandTotal;
 
 	CartPage(WebDriver driver) {
@@ -45,11 +44,6 @@ public class CartPage extends UiUtilities {
 	By tableRows = By.xpath("//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr");
 	By cartEmpty = By.xpath("//*[text() = 'Shopping Cart']/following-sibling::p");
 
-//	@FindBy(xpath = "//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[4]/div/div/button[2]")
-//	private WebElement removeItemBtn;
-
-//	By removeItemBtn = By.xpath("//*[@class  ='table table-bordered']/thead/following-sibling::tbody/tr[1]/td[4]/div/div/button[2]"); 
-
 	By successAlert = By.className("alert-success");
 
 	@FindBy(css = ".buttons a:last-of-type")
@@ -68,16 +62,12 @@ public class CartPage extends UiUtilities {
 
 		List<WebElement> cartTableRows = getElements(tableRows);
 
-		// Maximum quantity allowed is 437
 		int quantityColumnIndex = getColumnHeaderIndex("Quantity", cartTableHeaders);
 		int unitPriceColumnIndex = getColumnHeaderIndex("Unit Price", cartTableHeaders);
 		int totalColumnIndex = getColumnHeaderIndex("Total", cartTableHeaders);
-		int productNameColumnIndex = getColumnHeaderIndex("Product Name", cartTableHeaders);
 
 		for (int r = 1; r <= cartTableRows.size(); r++) {
 
-			WebElement productNameInRow = driver
-					.findElement(By.xpath(getBaseElementLocator(r, productNameColumnIndex) + "/a"));
 			WebElement quantityField = driver
 					.findElement(By.xpath(getBaseElementLocator(r, quantityColumnIndex) + "/div/input"));
 			WebElement updateQuantityBtn = driver

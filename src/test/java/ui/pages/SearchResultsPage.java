@@ -25,28 +25,18 @@ public class SearchResultsPage extends UiUtilities {
 
 	}
 
-	@FindBy(xpath = "//input[@placeholder='Search For Products']")
-	private WebElement searchField; // ******************** delete
-
-	@FindBy(xpath = "//*[@class = 'search-button']")
-	private WebElement searchButton; // ******************** delete
-
 	@FindBy(xpath = "//*[@for = 'mz-fss-0--1']")
-	private WebElement displayInstockFileterCheckbox;// *********** DELETE
+	private WebElement displayInstockFileterCheckbox;
 
 	By productImage = By.xpath("//*[@class='product-thumb']/div[1]");
-	
+
 	By noProductsFoundMessage = By.cssSelector("#entry_212469 p");
-	//By outOfStockLabel = By.xpath("//*[@id = 'mz-fss-0-5']/following-sibling::label']");
-	
 	@FindBy(xpath = "//*[@id = 'mz-fss-0-5']/following-sibling::label")
 	WebElement displayOutOfStockFileterCheckbox;
 
 	@FindBy(className = "btn-cart")
 	WebElement addToCartHoverBtn;
 
-
-	
 	By productAddedToCartPopup = By.xpath("//*[@id = 'notification-box-top']/div");
 
 	@FindBy(xpath = "//div[@class ='d-flex mb-3 align-items-start']/p")
@@ -65,7 +55,7 @@ public class SearchResultsPage extends UiUtilities {
 		}
 		getElementsAfterSearch();
 	}
-	
+
 	public void displayOnlyOutOfStockProducts(String availability) throws InterruptedException {
 
 		if (availability.equalsIgnoreCase("Out of Stock")) {
@@ -103,9 +93,7 @@ public class SearchResultsPage extends UiUtilities {
 
 			waitUntilElementIsClickable(addToCartHoverBtn);
 
-			
 			addToCartHoverBtn.click();
-
 
 		} catch (Exception e) {
 			System.out.println("Failed to add product to cart: " + e.getMessage());
@@ -124,15 +112,11 @@ public class SearchResultsPage extends UiUtilities {
 		waitForInvisibilityOfElementLocatedBy(productAddedToCartPopup);
 
 	}
-	
-	
+
 	public void verifyThatNoProductWasFound(String expectedMessage) {
 		WebElement messageEl = waitForVisibilityOfElementLocatedBy(noProductsFoundMessage);
 		String actualMessage = messageEl.getText();
 		assertTrue(actualMessage.equalsIgnoreCase(expectedMessage));
 	}
-	
-	
-	
 
 }

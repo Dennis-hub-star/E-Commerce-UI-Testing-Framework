@@ -10,7 +10,7 @@ import ui.pages.CartPage;
 import ui.pages.LoginPage;
 import ui.pages.SearchResultsPage;
 
-public class SearchProduct extends BaseTest {
+public class SearchAndAddProductToCard extends BaseTest {
 
 	@Test(dataProvider = "negativeSearchDataProvider", dataProviderClass = NegativeTestDataProviders.class)
 	public void searchInvalidProduct(HashMap<String, String> input) throws InterruptedException {
@@ -43,7 +43,7 @@ public class SearchProduct extends BaseTest {
 	
 	
 	@Test(dataProvider = "negativeProductQuantityUpdateDataProvider", dataProviderClass = NegativeTestDataProviders.class)
-	public void updateProductQuantityInCartNegative(HashMap<String, String> input) throws InterruptedException {
+	public void updateWithInvalidInputProductQuantityInCart(HashMap<String, String> input) throws InterruptedException {
 		
 		LoginPage userLogin = navigationBar.goToLoginPage();
 		userLogin.login(input.get("email"), input.get("password"));

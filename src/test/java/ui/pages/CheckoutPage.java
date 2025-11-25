@@ -24,9 +24,6 @@ public class CheckoutPage extends UiUtilities {
 	@FindBy(xpath = "//*[@for='input-payment-address-existing']")
 	private WebElement existingAddressRadioBtn;
 
-//	@FindBy(xpath = "//*[@id = 'input-payment-address-new']/following-sibling::label")
-//	private WebElement newAddressRadioBtn;
-
 	By newAddressRadioBtnBy = By.xpath("//*[@id = 'input-payment-address-new']/following-sibling::label");
 
 	@FindBy(id = "input-shipping-address-same")
@@ -204,18 +201,15 @@ public class CheckoutPage extends UiUtilities {
 	public void removeItemFromCheckout() {
 		// To be implemented
 
-		// *[@id = 'checkout-cart']/table/tbody/tr[1]/td[3]/div/div/button[2]
 		List<WebElement> checkoutTableRows = getElements(tableRows);
 		for (int r = 1; r <= checkoutTableRows.size(); r++) {
 			WebElement removeBtn = driver.findElement(By.xpath(getBaseElementLocator(r, 3) + "/div/div/button[2]"));
 			removeBtn.click();
-			// waitForInvisibilityOfElementLocatedBy(By.xpath(getBaseElementLocator(r, 1)));
+
+			String emptyCartMessage = waitForVisibilityOfElementLocatedBy(cartEmpty).getText();
+
+			verifyText(emptyCartMessage, "Your shopping cart is empty!");
 		}
-
-		String emptyCartMessage = waitForVisibilityOfElementLocatedBy(cartEmpty).getText();
-
-		//assertTrue(emptyCartMessage.contains("Your shopping cart is empty!"));
-		verifyText(emptyCartMessage, "Your shopping cart is empty!");
 
 	}
 

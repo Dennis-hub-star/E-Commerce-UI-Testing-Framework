@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-24T04:17:49 SAST" name="Default suite" finished-at="2025-11-24T04:40:49 SAST" duration-ms="1379663">
+  <suite started-at="2025-11-24T23:02:31 SAST" name="Default suite" finished-at="2025-11-24T23:23:30 SAST" duration-ms="1258559">
     <groups>
     </groups>
-    <test started-at="2025-11-24T04:17:49 SAST" name="Default test" finished-at="2025-11-24T04:40:49 SAST" duration-ms="1379663">
-      <class name="ui.tests.negativeTests.Checkout">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:17:52 SAST" name="launchApplication" finished-at="2025-11-24T04:18:47 SAST" duration-ms="55282" status="PASS">
+    <test started-at="2025-11-24T23:02:31 SAST" name="Default test" finished-at="2025-11-24T23:23:30 SAST" duration-ms="1258559">
+      <class name="ui.tests.negativeTests.CheckoutTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:02:35 SAST" name="launchApplication" finished-at="2025-11-24T23:03:35 SAST" duration-ms="59871" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:18:47 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:20:41 SAST" duration-ms="114188" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:03:35 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:05:40 SAST" duration-ms="125676" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:20:41 SAST" name="tearDown" finished-at="2025-11-24T04:20:45 SAST" duration-ms="3093" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:05:40 SAST" name="tearDown" finished-at="2025-11-24T23:05:44 SAST" duration-ms="3339" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:20:45 SAST" name="launchApplication" finished-at="2025-11-24T04:21:14 SAST" duration-ms="29194" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:05:44 SAST" name="launchApplication" finished-at="2025-11-24T23:06:42 SAST" duration-ms="58579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:21:14 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:23:19 SAST" duration-ms="125299" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:06:42 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:08:33 SAST" duration-ms="110559" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,15 +41,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:19 SAST" name="tearDown" finished-at="2025-11-24T04:23:21 SAST" duration-ms="1700" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:08:33 SAST" name="tearDown" finished-at="2025-11-24T23:08:36 SAST" duration-ms="3541" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:21 SAST" name="launchApplication" finished-at="2025-11-24T04:23:56 SAST" duration-ms="35028" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:08:36 SAST" name="launchApplication" finished-at="2025-11-24T23:09:11 SAST" duration-ms="34913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:23:56 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:25:42 SAST" duration-ms="106117" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:09:11 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:10:57 SAST" duration-ms="105617" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,15 +60,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:25:42 SAST" name="tearDown" finished-at="2025-11-24T04:26:05 SAST" duration-ms="22909" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:10:57 SAST" name="tearDown" finished-at="2025-11-24T23:11:00 SAST" duration-ms="3117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:26:05 SAST" name="launchApplication" finished-at="2025-11-24T04:26:39 SAST" duration-ms="34384" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:11:00 SAST" name="launchApplication" finished-at="2025-11-24T23:11:42 SAST" duration-ms="41365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:26:39 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:28:40 SAST" duration-ms="120456" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:11:42 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:13:23 SAST" duration-ms="101148" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,15 +79,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:28:40 SAST" name="tearDown" finished-at="2025-11-24T04:28:41 SAST" duration-ms="1531" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:13:23 SAST" name="tearDown" finished-at="2025-11-24T23:13:28 SAST" duration-ms="4920" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:28:41 SAST" name="launchApplication" finished-at="2025-11-24T04:29:45 SAST" duration-ms="64084" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:13:28 SAST" name="launchApplication" finished-at="2025-11-24T23:14:02 SAST" duration-ms="33982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:29:45 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:32:43 SAST" duration-ms="177465" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:14:02 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:15:52 SAST" duration-ms="110409" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -98,15 +98,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:32:43 SAST" name="tearDown" finished-at="2025-11-24T04:33:12 SAST" duration-ms="29127" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:15:52 SAST" name="tearDown" finished-at="2025-11-24T23:15:56 SAST" duration-ms="4040" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:33:12 SAST" name="launchApplication" finished-at="2025-11-24T04:33:44 SAST" duration-ms="31583" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:15:56 SAST" name="launchApplication" finished-at="2025-11-24T23:16:28 SAST" duration-ms="31554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:33:44 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:35:35 SAST" duration-ms="111229" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:16:28 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:18:20 SAST" duration-ms="112044" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,15 +117,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:35:35 SAST" name="tearDown" finished-at="2025-11-24T04:35:39 SAST" duration-ms="4412" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:18:20 SAST" name="tearDown" finished-at="2025-11-24T23:18:23 SAST" duration-ms="2974" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:35:39 SAST" name="launchApplication" finished-at="2025-11-24T04:36:12 SAST" duration-ms="33217" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:18:23 SAST" name="launchApplication" finished-at="2025-11-24T23:19:06 SAST" duration-ms="43803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:36:12 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:38:09 SAST" duration-ms="116572" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:19:07 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:20:57 SAST" duration-ms="110763" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -136,15 +136,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:09 SAST" name="tearDown" finished-at="2025-11-24T04:38:15 SAST" duration-ms="5505" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:20:57 SAST" name="tearDown" finished-at="2025-11-24T23:21:00 SAST" duration-ms="3165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:15 SAST" name="launchApplication" finished-at="2025-11-24T04:38:53 SAST" duration-ms="38051" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:21:00 SAST" name="launchApplication" finished-at="2025-11-24T23:21:43 SAST" duration-ms="42478" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:38:53 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T04:40:45 SAST" duration-ms="112327" status="PASS">
+        <test-method signature="negativeCheckoutTest(java.util.HashMap)[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:21:43 SAST" name="negativeCheckoutTest" data-provider="negativeCheckoutDataProvider" finished-at="2025-11-24T23:23:27 SAST" duration-ms="104417" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -155,11 +155,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeCheckoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.Checkout@6989da5e]" started-at="2025-11-24T04:40:45 SAST" name="tearDown" finished-at="2025-11-24T04:40:48 SAST" duration-ms="3091" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.negativeTests.CheckoutTest@6989da5e]" started-at="2025-11-24T23:23:27 SAST" name="tearDown" finished-at="2025-11-24T23:23:30 SAST" duration-ms="2379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ui.tests.negativeTests.Checkout -->
+      </class> <!-- ui.tests.negativeTests.CheckoutTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

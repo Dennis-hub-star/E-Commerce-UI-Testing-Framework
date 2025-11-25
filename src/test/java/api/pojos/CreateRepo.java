@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-//This line was added to ignore any unknown properties during JSON deserialization
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateRepo {
 

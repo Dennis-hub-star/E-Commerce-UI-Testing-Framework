@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import ui.components.SideMenu;
 import ui.utils.UiUtilities;
 
 public class RegistrationSuccessPage extends UiUtilities {
@@ -26,11 +25,6 @@ public class RegistrationSuccessPage extends UiUtilities {
 		WebElement messageEl = waitForElementToBeVisible(registrationSuccessMessage);
 
 		verifyText(messageEl.getText(), "Your Account Has Been Created!");
-
-		SideMenu sideMenu = new SideMenu(driver);
-		WebElement logoutBtn = sideMenu.getButtonFromSideMenu("Logout");
-
-		logoutBtn.click();
 	}
 
 	public void verifyActionSuccess(String expectedMessage) {
@@ -38,8 +32,6 @@ public class RegistrationSuccessPage extends UiUtilities {
 		WebElement messageEl = waitForElementToBeVisible(registrationSuccessMessage);
 
 		verifyText(messageEl.getText(), expectedMessage);
-		
-		//waitForElementToBeVisible(continueButton).click();
 	}
 
 }

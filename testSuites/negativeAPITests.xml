@@ -6,10 +6,10 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="ui.base.BaseTest"/> 
-      <class name="ui.tests.positiveTests.RegisterAndLogin"/>
-      <class name="api.test.positiveTests.PositiveE2ETests"/>
-      <!-- Add your cleanup class here -->
+      <class name="api.test.negativeTests.CreateRepoNegativeTests"/> 
+      <class name="api.test.negativeTests.DeleteRepoNegativeTest"/>
+      <class name="api.test.negativeTests.GetRepoNegativeTests"/>
+      <class name="api.test.negativeTests.UpdateRepoNegativeTest"/>
       <class name="ui.tests.TestCleanup"/>
     </classes>
   </test> <!-- Test -->

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>32/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 16 12:26:33 SAST 2025</td>
+<td>Started on:</td><td>Mon Nov 24 15:50:14 SAST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>685 seconds (685464 ms)</td>
+<tr><td>Total time:</td><td>3361 seconds (3361064 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,168 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dominic, lastName=Smith, password=Pass123!, scenario=Empty Email, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=0712345678, acceptPolicy=true, expectedError=E-Mail Address does not appear to be valid!, email=}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .mz-sub-menu-96 li (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.36.0&apos;, revision: &apos;6d115cfd87&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.94, fedcm:accounts: true, goog:processID: 31480, ms:edgeOptions: {debuggerAddress: localhost:57392}, msedge: {msedgedriverVersion: 142.0.3595.94 (6565d6e52817..., userDataDir: C:\Users\DENNIS\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57392/devtoo..., se:cdpVersion: 142.0.3595.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af20aa600bb4e6de20b980407e14d275
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ui.utils.UiUtilities.waitForVisibilityOfElementLocatedBy(UiUtilities.java:39)
+	at ui.utils.UiUtilities.getElements(UiUtilities.java:74)
+	at ui.components.NavigationBar.goToMyAccountOption(NavigationBar.java:79)
+	at ui.components.NavigationBar.goToRegistrationPage(NavigationBar.java:68)
+	at ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration(RegistrationNegativeTest.java:20)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1758598484", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1758598484'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .mz-sub-menu-96 li (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.36.0&apos;, revision: &apos;6d115cfd87&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 142.0.3595.94, fedcm:accounts: true, goog:processID: 31480, ms:edgeOptions: {debuggerAddress: localhost:57392}, msedge: {msedgedriverVersion: 142.0.3595.94 (6565d6e52817..., userDataDir: C:\Users\DENNIS\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57392/devtoo..., se:cdpVersion: 142.0.3595.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af20aa600bb4e6de20b980407e14d275
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ui.utils.UiUtilities.waitForVisibilityOfElementLocatedBy(UiUtilities.java:39)
+	at ui.utils.UiUtilities.getElements(UiUtilities.java:74)
+	at ui.components.NavigationBar.goToMyAccountOption(NavigationBar.java:79)
+	at ui.components.NavigationBar.goToRegistrationPage(NavigationBar.java:68)
+	at ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration(RegistrationNegativeTest.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>27</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=aVeryLongPassword1234567890123456789012345678901234567890, expectedAlert=Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour., scenario=Password Too Long, email=jessica.alba@gmail.com}</td>
+<td><div><pre>java.lang.AssertionError: expected [Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.] but found [Warning: No match for E-Mail Address and/or Password.]
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:79)
+	at ui.pages.LoginPage.verifyThatUserLoginFailed(LoginPage.java:55)
+	at ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest(LoginNegativeTest.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace872772269", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace872772269'><pre>java.lang.AssertionError: expected [Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.] but found [Warning: No match for E-Mail Address and/or Password.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:79)
+	at ui.pages.LoginPage.verifyThatUserLoginFailed(LoginPage.java:55)
+	at ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest(LoginNegativeTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>18</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@321#, expectedAlert=Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour., scenario=Incorrect Password, email=jessica.alba@gmail.com}</td>
+<td><div><pre>java.lang.AssertionError: expected [Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.] but found [Warning: No match for E-Mail Address and/or Password.]
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:79)
+	at ui.pages.LoginPage.verifyThatUserLoginFailed(LoginPage.java:55)
+	at ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest(LoginNegativeTest.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1071103533", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1071103533'><pre>java.lang.AssertionError: expected [Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.] but found [Warning: No match for E-Mail Address and/or Password.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:79)
+	at ui.pages.LoginPage.verifyThatUserLoginFailed(LoginPage.java:55)
+	at ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest(LoginNegativeTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>20</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,25 +238,165 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ui.tests.RegisterAndLogin.orderDetailsConfirmationTest()'><b>orderDetailsConfirmationTest</b><br>Test class: ui.tests.RegisterAndLogin<br>Parameters: {unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=600.00, email=dismond.newton@gmail.com, productName=Samsung}</td>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=, expectedAlert=Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour., scenario=Both Fields Empty, email=}</td>
 <td></td>
-<td>152</td>
-<td>ui.tests.RegisterAndLogin@2ca923bb</td></tr>
+<td>17</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
 <tr>
-<td title='ui.tests.RegisterAndLogin.orderDetailsConfirmationTest()'><b>orderDetailsConfirmationTest</b><br>Test class: ui.tests.RegisterAndLogin<br>Parameters: {unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=202.00, email=jessica.alba@gmail.com, productName=iPhone}</td>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dominic, lastName=Smith, password=Pass123!, scenario=Empty Telephone, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=, acceptPolicy=true, expectedError=Telephone must be between 3 and 32 characters!, email=valid@example.com}</td>
 <td></td>
-<td>159</td>
-<td>ui.tests.RegisterAndLogin@2ca923bb</td></tr>
+<td>26</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
 <tr>
-<td title='ui.tests.RegisterAndLogin.orderHistoryTest()'><b>orderHistoryTest</b><br>Test class: ui.tests.RegisterAndLogin<br>Parameters: {totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba@gmail.com, customerName=Jessica Alba, status=Pending}</td>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.searchInvalidProduct()'><b>searchInvalidProduct</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {resultsMessage=There is no product that matches the search criteria., password=jessica@123, availability=In Stock, email=jessica.alba@gmail.com, productName=@#$%^&*}</td>
 <td></td>
-<td>32</td>
-<td>ui.tests.RegisterAndLogin@2ca923bb</td></tr>
+<td>46</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
 <tr>
-<td title='ui.tests.RegisterAndLogin.orderHistoryTest()'><b>orderHistoryTest</b><br>Test class: ui.tests.RegisterAndLogin<br>Parameters: {totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newton@gmail.com, customerName=Dismond Newton, status=Pending}</td>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.updateWithInvalidInputProductQuantityInCart()'><b>updateWithInvalidInputProductQuantityInCart</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {alertMessage=Products marked with *** are not available in the desired quantity or not in stock!, password=dismond@123, productQuantity=246797543, availability=In Stock, email=dismond.newton@gmail.com, productName=Samsung}</td>
 <td></td>
-<td>54</td>
-<td>ui.tests.RegisterAndLogin@2ca923bb</td></tr>
+<td>78</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=, expected=Address 1 must be between 3 and 128 characters!, availability=In Stock, productName=iPhone, firstName=John, password=jessica@123, productQuantity=2, scenario=Empty Address 1, company=TechCorp, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}</td>
+<td></td>
+<td>126</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Unregistered Email, email=notregistered@example.com}</td>
+<td></td>
+<td>17</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dennis, lastName=Mamyala, password=Pass123!, scenario=Telephone Too Long, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=07123456789012345678901234567890123, acceptPolicy=true, expectedError=Telephone must be between 3 and 32 characters!, email=valid@example.com}</td>
+<td></td>
+<td>24</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dennis, lastName=Mamyala, password=Pass123!, scenario=Telephone Too Short, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=07, acceptPolicy=true, expectedError=Telephone must be between 3 and 32 characters!, email=valid@example.com}</td>
+<td></td>
+<td>27</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Empty Password, email=jessica.alba@gmail.com}</td>
+<td></td>
+<td>19</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dominic, lastName=Smith, password=, scenario=Empty Password, subscribeNewsletter=yes, confirmPassword=, telephone=0712345678, acceptPolicy=true, expectedError=Password must be between 4 and 20 characters!, email=valid@example.com}</td>
+<td></td>
+<td>34</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dennis, lastName=Mamyala, password=Pass123!, scenario=Password And Confirm Password Mismatch, subscribeNewsletter=yes, confirmPassword=Pass123, telephone=0712345678, acceptPolicy=true, expectedError=Password confirmation does not match password!, email=valid@example.com}</td>
+<td></td>
+<td>25</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Last Name must be between 1 and 32 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Empty Last Name, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}</td>
+<td></td>
+<td>120</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.addOutOfStockProductToCart()'><b>addOutOfStockProductToCart</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {alertMessage=Products marked with *** are not available in the desired quantity or not in stock!, password=jessica@123, availability=Out Of Stock, email=jessica.alba@gmail.com, productName=Iphone}</td>
+<td></td>
+<td>80</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dennis, lastName=Mamyala, password=12, scenario=Password Too Short, subscribeNewsletter=yes, confirmPassword=12, telephone=0712345678, acceptPolicy=true, expectedError=Password must be between 4 and 20 characters!, email=valid@example.com}</td>
+<td></td>
+<td>25</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dennis, lastName=Mamyala, password=Pass123!, scenario=Privacy Policy Not Accepted, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=0712345678, acceptPolicy=false, expectedError=Warning: You must agree to the Privacy Policy!, email=valid@example.com}</td>
+<td></td>
+<td>27</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Invalid Email Missing TLD, email=jessica.alba@gmail}</td>
+<td></td>
+<td>17</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=, lastName=Smith, password=Pass123!, scenario=Empty First Name, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=0712345678, acceptPolicy=true, expectedError=First Name must be between 1 and 32 characters!, email=valid@example.com}</td>
+<td></td>
+<td>29</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=ThisAddressIsWayTooLongForTheSystemToAcceptAndShouldTriggerValidationErrorBecauseItExceeds128Characters123456789012345fjdjdjhdhdeheuedudjcnsksosidjhdfkjrflrpeioeuehendmcjxusyhdnfjfjedhdhgdxndjfkfgtjrjrjhjhrjrjrsnbd, expected=Address 1 must be between 3 and 128 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Extremely Long Address 1, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}</td>
+<td></td>
+<td>114</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Invalid Email Missing @ Symbol, email=jessica.albagmail.com}</td>
+<td></td>
+<td>18</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Empty Email, email=}</td>
+<td></td>
+<td>20</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=First Name must be between 1 and 32 characters!, availability=In Stock, productName=iPhone, firstName=, password=jessica@123, productQuantity=2, scenario=Empty First Name, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}</td>
+<td></td>
+<td>138</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour., scenario=Whitespace Only Email, email=   }</td>
+<td></td>
+<td>17</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.addOutOfStockProductToCart()'><b>addOutOfStockProductToCart</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {alertMessage=Products marked with *** are not available in the desired quantity or not in stock!, password=dismond@123, availability=Out Of Stock, email=dismond.newton@gmail.com, productName=MacBook}</td>
+<td></td>
+<td>76</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Invalid Email Missing Domain, email=jessica.alba@}</td>
+<td></td>
+<td>17</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country= --- Please Select --- , agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Please select a country!, availability=In Stock, productName=iPhone, firstName=John, password=jessica@123, productQuantity=2, scenario=Country Not Selected, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}</td>
+<td></td>
+<td>109</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=, address1=123 Main St, expected=City must be between 2 and 128 characters!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Empty City, company=, postCode=0001, region=Gauteng, email=dismond.newton@gmail.com}</td>
+<td></td>
+<td>116</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=First Name must be between 1 and 32 characters!, availability=In Stock, productName=iPhone, firstName=JohnJohnJohnJohnJohnJohnJohnJohnJohnJohn, password=jessica@123, productQuantity=2, scenario=Extremely Long First Name, company=, postCode=0001, region=Gauteng, email=jessica.alba@gmail.com}</td>
+<td></td>
+<td>110</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.LoginNegativeTest.loginNegativeTest()'><b>loginNegativeTest</b><br>Test class: ui.tests.negativeTests.LoginNegativeTest<br>Parameters: {password=jessica@123, expectedAlert=Warning: No match for E-Mail Address and/or Password., scenario=Email Too Long, email=aVeryLongEmailAddress_abcdefghijklmnopqrstuvwxyz12345678901234567890@example.com}</td>
+<td></td>
+<td>21</td>
+<td>ui.tests.negativeTests.LoginNegativeTest@2ca923bb</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.searchInvalidProduct()'><b>searchInvalidProduct</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {resultsMessage=There is no product that matches the search criteria., password=dismond@123, availability=In Stock, email=dismond.newton@gmail.com, productName=itemthatdoesnotexist12345}</td>
+<td></td>
+<td>35</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.RegistrationNegativeTest.testNegativeRegistration()'><b>testNegativeRegistration</b><br>Test class: ui.tests.negativeTests.RegistrationNegativeTest<br>Parameters: {firstName=Dominic, lastName=, password=Pass123!, scenario=Empty Last Name, subscribeNewsletter=yes, confirmPassword=Pass123!, telephone=0712345678, acceptPolicy=true, expectedError=Last Name must be between 1 and 32 characters!, email=valid@example.com}</td>
+<td></td>
+<td>25</td>
+<td>ui.tests.negativeTests.RegistrationNegativeTest@13df2a8c</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.CheckoutTest.negativeCheckoutTest()'><b>negativeCheckoutTest</b><br>Test class: ui.tests.negativeTests.CheckoutTest<br>Parameters: {lastName=Smith, country=South Africa, agreeToTerms=yes, address2=, city=Pretoria, address1=123 Main St, expected=Please select a region / state!, availability=In Stock, productName=Samsung, firstName=John, password=dismond@123, productQuantity=2, scenario=Region Not Selected, company=, postCode=0001, region= --- Please Select --- , email=dismond.newton@gmail.com}</td>
+<td></td>
+<td>112</td>
+<td>ui.tests.negativeTests.CheckoutTest@5038d0b5</td></tr>
+<tr>
+<td title='ui.tests.negativeTests.SearchAndAddProductToCard.updateWithInvalidInputProductQuantityInCart()'><b>updateWithInvalidInputProductQuantityInCart</b><br>Test class: ui.tests.negativeTests.SearchAndAddProductToCard<br>Parameters: {alertMessage=Products marked with *** are not available in the desired quantity or not in stock!, password=jessica@123, productQuantity=438, availability=In Stock, email=jessica.alba@gmail.com, productName=iPhone}</td>
+<td></td>
+<td>80</td>
+<td>ui.tests.negativeTests.SearchAndAddProductToCard@1ebea008</td></tr>
 </table><p>
 </body>
 </html>

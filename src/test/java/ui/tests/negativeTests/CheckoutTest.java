@@ -9,7 +9,7 @@ import ui.pages.CheckoutPage;
 import ui.pages.LoginPage;
 import ui.pages.SearchResultsPage;
 
-public class Checkout extends BaseTest {
+public class CheckoutTest extends BaseTest {
 
 	@Test(dataProvider = "negativeCheckoutDataProvider", dataProviderClass = NegativeTestDataProviders.class)
 	public void negativeCheckoutTest(java.util.HashMap<String, String> input) throws InterruptedException {

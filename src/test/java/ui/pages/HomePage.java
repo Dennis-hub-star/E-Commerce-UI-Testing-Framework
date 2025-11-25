@@ -24,17 +24,12 @@ public class HomePage extends UiUtilities {
 	}
 
 	@FindBy(css = ".dropdown-hoverable:last-child")
-	private WebElement myAccount; // *********** delete
+	private WebElement myAccount;
 
-//	@FindBy(css = ".mz-sub-menu-96 li:first-child")
-//	private WebElement login; // *********** delete
-	
 	By login = By.cssSelector(".mz-sub-menu-96 li:first-child");
-//
-//	@FindBy(css = ".mz-sub-menu-96 li:last-child")
-//	private WebElement register;  // *********** delete
 
 	By register = By.cssSelector(".mz-sub-menu-96 li:last-child");
+
 	public RegistrationPage goToRegistrationPage() {
 
 		actions().moveToElement(myAccount).perform();
@@ -45,20 +40,6 @@ public class HomePage extends UiUtilities {
 
 	}
 
-//	public Utilities goToPage(String pageName) {
-//
-//		Map<String, Supplier<Utilities>> pageMap = Map.of("login", () -> new LoginPage(driver), "register",
-//				() -> new RegistrationPage(driver));
-//
-//		WebElement elementToClick = pageName.equalsIgnoreCase("loginPage") ? login : register;
-//		waitForElementToBeVisible(elementToClick);
-//		elementToClick.click();
-//
-//		return pageMap.get(pageName.toLowerCase()).get(); // returns BasePage reference
-//
-//	}
-
-	// ********* delete 
 	public LoginPage goToLoginPage() {
 
 		actions().moveToElement(myAccount).perform();
