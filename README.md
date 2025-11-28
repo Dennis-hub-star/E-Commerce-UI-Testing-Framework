@@ -120,19 +120,158 @@ src/test/resources
 
 **Reports & Test Output:**
 
-+ TestNG output: test-output/
++ TestNG output: `test-output/`
 
-+ Extent Reports: reports/
++ Extent Reports: `reports/`
 
 **Test Suites:**
 
-+ hybridE2ETest.xml
++ `hybridE2ETest.xml`
 
-+ loginSuite.xml
++ `loginSuite.xml`
 
-+ registrationSuite.xml
++ `registrationSuite.xml`
 
-+ negativeAPITestsSuite.xml
++ `negativeAPITestsSuite.xml`
 
-+ negativeUITestsSuite.xml
++ `negativeUITestsSuite.xml`
+
+---
+
+ ## Features
+
+**UI Automation Features**
+
++ End-to-end scenarios: login, registration, search, add-to-cart, checkout, confirm order, order history
+
++ Positive and negative test coverage
+
++ Page Object Model (POM) design for modularity
+
++ Component-based reusable classes for UI elements
+
++ Data-driven tests via JSON + TestNG DataProviders
+
+**API Automation Features**
+
++ CRUD operations on Git Repository API
+
++ Positive & negative test scenarios
+
++ POJO-based payload and response validation
+
++ Dynamic test data for robustness
+
++ Shared utilities to reduce code duplication
+
+
+**Cross-Cutting Features**
+
++ Extent Reports for detailed, visual test reporting
+
++ TestNG listeners for capturing screenshots on failure
+
++ Email notifications for test results
+
++ Modular, reusable utility classes
+
+----
+
+## Test Data Management
+
++ **UI Test Data**: JSON files under `src/test/resources/ui/data/`
+
++ **API Test Data**: JSON files under `src/test/resources/api/testData/`
+
++ **DataProviders**: Java classes under `dataProviders` packages provide dynamic input for both positive and negative tests
+
+Ensures **data-driven**, **maintainable**, and **scalable** test coverage.
+
+---
+
+## Running the Tests
+
+**Prerequisites:**
+
++ Java JDK 8+
+
++ Maven installed
+
++ IDE: Eclipse or IntelliJ IDEA
+
++ Internet connection for ecommerce-playground and GitHub API
+
+**Steps:**
+
+**1.** Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd my_e-Commerce_Site_Project
+```
+
+**2.** Run tests via TestNG XML suite
+
+```bash
+mvn test -DsuiteXmlFile=testSuites/hybridE2ETest.xml
+```
+
+
+**3.** Install dependencies via Maven
+
+```bash
+mvn clean install
+```
+
+**4.** View reports in:
+
++ Extent Reports: `reports/`
+
++ TestNG Reports: `test-output/`
+
+---
+
+## Reporting & Utilities
+
++ **Extent Reports**: Provides detailed HTML reports with screenshots and logs
+
++ **Listeners**: Capture screenshots on test failure, track suite progress
+
++ **Email Utility**: Sends email reports post-execution
+
++ **Zip Utility**: Archives reports for distribution or storage
+
+
+## Test Suites
+
++ **hybridE2ETest.xml** – Runs full end-to-end tests across UI and API
+
++ **loginSuite.xml** – UI login tests
+
++ **registrationSuite.xml** – UI registration tests
+
++ **negativeAPITestsSuite.xml** – Negative API tests for CRUD operations
+
++ **negativeUITestsSuite.xml** – Negative UI tests
+
+Each suite is **modular**, allowing selective execution for faster feedback or full regression runs.
+
+
+---
+
+## Project Highlights / Portfolio Value
+
++ Real-world hybrid framework combining UI + API testing
+
++ Implements **modular**, **reusable**, and **scalable** architecture
+
++ **Data-driven testing** with positive & negative coverage
+
++ Professional reporting via **Extent Reports & TestNG**
+
++ Demonstrates **industry best practices:** POM, TestNG, REST Assured, utilities, listeners, and suite management
+
++ Ready to showcase on **GitHub portfolio** for recruiters
+
+
 
