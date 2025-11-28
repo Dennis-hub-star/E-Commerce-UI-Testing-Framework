@@ -4,13 +4,28 @@
   <listeners>
 	<listener class-name = "ui.Listeners.Listeners" />
 </listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="CheckoutErrorValidation">
     <classes>
       <class name="ui.tests.negativeTests.CheckoutTest"/> 
-      <class name="ui.tests.negativeTests.LoginNegativeTest"/>
-      <class name="ui.tests.negativeTests.RegistrationNegativeTest"/>
-      <class name="ui.tests.negativeTests.SearchAndAddProductToCard"/>
-      <class name="ui.tests.TestCleanup"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+  
+   <test thread-count="5" name="LoginErrorValidation">
+    <classes>
+      <class name="ui.tests.negativeTests.LoginNegativeTest"/>
+    </classes>
+  </test> 
+  
+   <test thread-count="5" name="RegistrationErrorValidation">
+    <classes>
+      <class name="ui.tests.negativeTests.RegistrationNegativeTest"/>
+    </classes>
+  </test>
+  
+  <test thread-count="5" name="SearchAndAddToCartErrorValidation">
+    <classes>
+      <class name="ui.tests.negativeTests.SearchAndAddProductToCard"/>
+    </classes>
+  </test>
+
+</suite> 

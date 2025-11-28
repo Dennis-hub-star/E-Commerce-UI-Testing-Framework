@@ -1,9 +1,24 @@
 package api.pojos;
 
+/**
+ * This class represents the response for failed GET, UPDATE, or DELETE operations on a repository.
+ * It includes fields for error messages, documentation URL, and status.
+ */
 public class GetUpdateDeleteNegative {
 
+	/**
+	 * The error message returned by the API.
+	 */
 	private String message;
+
+	/**
+	 * The URL to the API documentation for the error.
+	 */
 	private String documentation_url;
+
+	/**
+	 * The status of the API response.
+	 */
 	private String status;
 	
 	public String getMessage() {

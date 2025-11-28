@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import api.dataProviders.DataProviders;
+import api.dataProviders.positiveTestsData.DataProviders;
 import api.endpoints.UserEndPoints;
 import api.payload.CreateRepoPayload;
 import api.pojos.CreateRepo;

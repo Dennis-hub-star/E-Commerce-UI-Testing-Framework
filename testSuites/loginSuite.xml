@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <listeners>
+	<listener class-name = "ui.Listeners.Listeners" />
+</listeners>
+  <test thread-count="5" name="Login">
+    <classes>
+      <class name="ui.tests.positiveTests.Login"/>
+    </classes>
+  </test> 
+
+
+</suite> 

@@ -15,6 +15,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import ui.components.NavigationBar;
 import ui.pages.HomePage;
 
+/**
+ * BaseTest class provides the setup and teardown methods for UI tests.
+ * It initializes the WebDriver and launches the application before each test.
+ */
 public class BaseTest {
 
 	public WebDriver driver;
@@ -22,6 +26,12 @@ public class BaseTest {
 	protected NavigationBar navigationBar;
 	private String file = "ui.properties.globalData";
 
+	/**
+	 * Initializes the WebDriver based on the browser specified in the configuration.
+	 * 
+	 * @return WebDriver instance for the specified browser.
+	 * @throws IOException If there is an error reading the configuration file.
+	 */
 	public WebDriver initializeDriver() throws IOException {
 
 
@@ -55,6 +65,11 @@ public class BaseTest {
 		return driver;
 	}
 
+	/**
+	 * Launches the application and initializes the navigation bar.
+	 * 
+	 * @throws IOException If there is an error reading the configuration file.
+	 */
 	@BeforeMethod
 	public void launchApplication() throws IOException {
 		driver = initializeDriver();
@@ -64,6 +79,9 @@ public class BaseTest {
 		
 	}
 
+	/**
+	 * Closes the browser after each test.
+	 */
 	@AfterMethod
 	public void tearDown() {
 		driver.close();

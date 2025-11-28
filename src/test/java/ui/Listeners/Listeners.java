@@ -15,6 +15,10 @@ import ui.ExtentReportsNG.ExtentReportsNG;
 import ui.base.BaseTest;
 import ui.utils.UiUtilities;
 
+/**
+ * Listeners class implements ITestListener to provide custom test execution behavior.
+ * It integrates with ExtentReports for logging test results and capturing screenshots on failure.
+ */
 public class Listeners extends BaseTest implements ITestListener {
 
 	ExtentReports extent = ExtentReportsNG.ExtentReportsObject();
@@ -22,6 +26,11 @@ public class Listeners extends BaseTest implements ITestListener {
 
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
+	/**
+	 * Logs the start of a test method.
+	 * 
+	 * @param result Test result object containing method details.
+	 */
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -33,6 +42,11 @@ public class Listeners extends BaseTest implements ITestListener {
 		extentTest.set(test);
 	}
 
+	/**
+	 * Logs the success of a test method.
+	 * 
+	 * @param result Test result object containing method details.
+	 */
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -42,6 +56,11 @@ public class Listeners extends BaseTest implements ITestListener {
 		extentTest.get().log(Status.PASS, "Test has passed");
 	}
 
+	/**
+	 * Logs the failure of a test method and captures a screenshot.
+	 * 
+	 * @param result Test result object containing method details.
+	 */
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -68,6 +87,11 @@ public class Listeners extends BaseTest implements ITestListener {
 		extentTest.get().addScreenCaptureFromPath(filePath);
 	}
 
+	/**
+	 * Logs the skipping of a test method.
+	 * 
+	 * @param result Test result object containing method details.
+	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -92,6 +116,11 @@ public class Listeners extends BaseTest implements ITestListener {
 		ITestListener.super.onStart(context);
 	}
 
+	/**
+	 * Logs the completion of all test methods in a test context.
+	 * 
+	 * @param context Test context object containing details of the test run.
+	 */
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub

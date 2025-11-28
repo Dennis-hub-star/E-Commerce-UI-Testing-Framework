@@ -10,10 +10,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Order Confirmation Page of the application.
+ * Provides methods to verify order details and confirm the order.
+ */
 public class OrderConfirmPage extends UiUtilities {
 
 	WebDriver driver;
 
+	/**
+	 * Constructor to initialize the OrderConfirmPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	OrderConfirmPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -37,6 +46,14 @@ public class OrderConfirmPage extends UiUtilities {
 	@FindBy(id = "button-confirm")
 	private WebElement confirmOrderBtn;
 
+	/**
+	 * Verifies the order confirmation details table against expected values.
+	 * 
+	 * @param expectedProductName Expected product name.
+	 * @param expectedQuantity Expected quantity of the product.
+	 * @param expectedUnitPrice Expected unit price of the product.
+	 * @param expectedSubTotal Expected subtotal for the product.
+	 */
 	public void verifyOrderConfirmationDetailsTable(String expectedProductName, String expectedQuantity,
 			String expectedUnitPrice, String expectedSubTotal)
 
@@ -65,6 +82,13 @@ public class OrderConfirmPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Validates the order confirmation summary table against expected values.
+	 * 
+	 * @param expectedSubTotal Expected subtotal.
+	 * @param expectedFlatShippingRate Expected flat shipping rate.
+	 * @param expectedTotal Expected total amount.
+	 */
 	public void validateOrderConfirmationSummaryTable(String expectedSubTotal, String expectedFlatShippingRate,
 			String expectedTotal) {
 
@@ -77,6 +101,12 @@ public class OrderConfirmPage extends UiUtilities {
 		verifyText(expectedTotal, total);
 	}
 
+	/**
+	 * Retrieves the amount for a specific item in the summary table.
+	 * 
+	 * @param item The item name to retrieve the amount for.
+	 * @return The amount as a string.
+	 */
 	private String getSummaryTableAmountOf(String item) {
 
 		WebElement itemInSummary = driver
@@ -84,6 +114,13 @@ public class OrderConfirmPage extends UiUtilities {
 		return itemInSummary.getText().replace("$", "").trim();
 	}
 
+	/**
+	 * Retrieves a specific cell element from the order details table.
+	 * 
+	 * @param rowIndex The row index of the cell.
+	 * @param columnIndex The column index of the cell.
+	 * @return The WebElement representing the cell.
+	 */
 	public WebElement getElement(int rowIndex, int columnIndex) {
 		WebElement cell = driver.findElement(By.xpath(
 				"//*[@class = 'table-responsive mb-4']/table/tbody/tr[" + rowIndex + "]/td[" + columnIndex + "]"));
@@ -100,6 +137,11 @@ public class OrderConfirmPage extends UiUtilities {
 //		
 //	}
 
+	/**
+	 * Confirms that the order is placed successfully.
+	 * 
+	 * @throws InterruptedException If the thread is interrupted during execution.
+	 */
 	public void confirmThatOrderIsPlaced() throws InterruptedException {
 
 		waitUntilElementIsClickable(confirmOrderBtn).click();

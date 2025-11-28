@@ -32,9 +32,6 @@ public class SideMenu extends UiUtilities {
 				break;
 			}
 		}
-//		if (actualItem == null) {
-//			System.out.println("Button '" + buttonName + "' not found in side menu.");
-//		}
 
 		return actualItem;
 

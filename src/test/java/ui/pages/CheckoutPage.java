@@ -11,10 +11,20 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Checkout Page of the application.
+ * Provides methods to fill in billing details, validate the checkout items table,
+ * and proceed to the order confirmation page.
+ */
 public class CheckoutPage extends UiUtilities {
 
 	WebDriver driver;
 
+	/**
+	 * Constructor to initialize the CheckoutPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	CheckoutPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -76,6 +86,19 @@ public class CheckoutPage extends UiUtilities {
 	By dropdownOption = By.xpath("//option[text() = 'Gauteng']");
 	By cartEmpty = By.xpath("//*[text() = 'Shopping Cart']/following-sibling::p");
 
+	/**
+	 * Fills in the billing details form with the provided information.
+	 * 
+	 * @param firstName First name of the user.
+	 * @param lastName Last name of the user.
+	 * @param company Company name (optional).
+	 * @param address1 Address line 1.
+	 * @param address2 Address line 2 (optional).
+	 * @param city City name.
+	 * @param postcode Postal code.
+	 * @param country Country name.
+	 * @param regionState State or region name.
+	 */
 	public void fillInBillingDetails(String firstName, String lastName, String company, String address1,
 			String address2, String city, String postcode, String country, String regionState) {
 
@@ -111,6 +134,11 @@ public class CheckoutPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Verifies the error message displayed for mandatory billing details.
+	 * 
+	 * @param expectedMessage The expected error message.
+	 */
 	public void verifyErrorMessageForMandatoryBillingDetails(String expectedMessage) {
 
 		verifyText(expectedMessage, billingDetailsErrorMessage.getText().trim());
@@ -124,6 +152,11 @@ public class CheckoutPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Accepts or declines the terms and conditions based on the input.
+	 * 
+	 * @param accept "yes" to accept, "no" to decline.
+	 */
 	public void acceptTermsAndConditions(String accept) {
 		waitUntilElementIsClickable(termsAndConditionsCheckbox);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", termsAndConditionsCheckbox);
@@ -134,6 +167,11 @@ public class CheckoutPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Proceeds to the order confirmation page after completing the checkout process.
+	 * 
+	 * @throws InterruptedException If interrupted during execution.
+	 */
 	public void proceedToConfirmationPage() throws InterruptedException {
 		waitUntilElementIsClickable(continueBtn);
 		continueBtn.click();
@@ -142,6 +180,15 @@ public class CheckoutPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Validates the checkout items table against the expected values.
+	 * 
+	 * @param expectedProductName Expected product name.
+	 * @param expectedQuantity Expected quantity of the product.
+	 * @param expectedUnitPrice Expected unit price of the product.
+	 * @param expectedSubTotal Expected subtotal for the product.
+	 * @return OrderConfirmPage object representing the order confirmation page.
+	 */
 	public OrderConfirmPage validateCheckoutItemsTable(String expectedProductName, String expectedQuantity,
 			String expectedUnitPrice, String expectedSubTotal) {
 
@@ -181,6 +228,13 @@ public class CheckoutPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Validates the cart summary table against the expected values.
+	 * 
+	 * @param expectedSubTotal Expected subtotal.
+	 * @param expectedFlatShippingRate Expected flat shipping rate.
+	 * @param expectedTotal Expected total amount.
+	 */
 	public void validateCartSummaryTable(String expectedSubTotal, String expectedFlatShippingRate,
 			String expectedTotal) {
 
@@ -198,6 +252,9 @@ public class CheckoutPage extends UiUtilities {
 		return "//*[@id = 'checkout-cart']/table/tbody/tr[" + rowIndex + "]/td[" + columnIndex + "]";
 	}
 
+	/**
+	 * Removes an item from the checkout table and verifies the cart is empty.
+	 */
 	public void removeItemFromCheckout() {
 		// To be implemented
 

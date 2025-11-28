@@ -8,10 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Registration Page of the application.
+ * Provides methods to register a new user and validate registration errors.
+ */
 public class RegistrationPage extends UiUtilities {
 
 	WebDriver driver;
 
+	/**
+	 * Constructor to initialize the RegistrationPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -53,6 +62,19 @@ public class RegistrationPage extends UiUtilities {
 
 	private boolean acceptPolicy;
 
+	/**
+	 * Registers a new user with the provided details.
+	 * 
+	 * @param firstName User's first name.
+	 * @param lastName User's last name.
+	 * @param email User's email address.
+	 * @param telephone User's telephone number.
+	 * @param password User's password.
+	 * @param confirmPassword Confirmation of the user's password.
+	 * @param subscriptionStatus Subscription status ("yes" or "no").
+	 * @param agreePrivacyPolicy Whether the user agrees to the privacy policy.
+	 * @return RegistrationSuccessPage object representing the success page.
+	 */
 	public RegistrationSuccessPage register(String firstName, String lastName, String email, String telephone,
 			String password, String confirmPassword, String subscriptionStatus, boolean agreePrivacyPolicy) {
 
@@ -82,10 +104,20 @@ public class RegistrationPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Checks if the user accepted the privacy policy.
+	 * 
+	 * @return True if the privacy policy was accepted, false otherwise.
+	 */
 	public boolean isAcceptPolicy() {
 		return acceptPolicy;
 	}
 
+	/**
+	 * Verifies that the user is not registered and validates the error message.
+	 * 
+	 * @param expectedMessage The expected error message.
+	 */
 	public void verifyThatUserIsNotRegistered(String expectedMessage) {
 
 		if (isAcceptPolicy()) {

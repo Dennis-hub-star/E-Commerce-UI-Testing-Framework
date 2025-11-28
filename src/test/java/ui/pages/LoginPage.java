@@ -9,20 +9,26 @@ import org.openqa.selenium.support.PageFactory;
 import ui.components.SideMenu;
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Login Page of the application.
+ * Provides methods to log in, verify login status, and handle logout actions.
+ */
 public class LoginPage extends UiUtilities {
 
 	WebDriver driver;
 	SideMenu sideMenu;
 
+	/**
+	 * Constructor to initialize the LoginPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-
-
 	@FindBy(xpath = "//*[@name = 'email']")
 	private WebElement emailField;
 
@@ -38,6 +44,13 @@ public class LoginPage extends UiUtilities {
 //	By loginErrorMessage = By.cssSelector(".alert.alert-danger.alert-dismissible");
 	By errorAlert = By.cssSelector(".alert.alert-danger");
 
+	/**
+	 * Logs in with the provided email and password.
+	 * 
+	 * @param email User's email address.
+	 * @param password User's password.
+	 * @return AccountPage object representing the account page after login.
+	 */
 	public AccountPage login(String email, String password) {
 		sideMenu = new SideMenu(driver);
 		waitForElementToBeVisible(emailField).clear();
@@ -49,6 +62,11 @@ public class LoginPage extends UiUtilities {
 		return new AccountPage(driver);
 	}
 	
+	/**
+	 * Verifies that the user login failed and validates the error message.
+	 * 
+	 * @param alertMessage The expected error message.
+	 */
 	public void verifyThatUserLoginFailed(String alertMessage) {
 		WebElement errorEl = waitForVisibilityOfElementLocatedBy(errorAlert);
 		verifyText(errorEl.getText(), alertMessage);
@@ -71,17 +89,26 @@ public class LoginPage extends UiUtilities {
 //		return results.searchAndAddProduct(product);
 //	}
 	
+	/**
+	 * Verifies that the user is logged in by checking the side menu options.
+	 */
 	public void verifyThatUserLoggedIn() {
 		verifyText(sideMenu.getButtonFromSideMenu("My Account").getText(), "My Account");
 		verifyText(sideMenu.getButtonFromSideMenu("Edit Account").getText(), "Edit Account");
 	}
 
+	/**
+	 * Logs out the user by clicking the logout button in the side menu.
+	 */
 	public void userLogout() {
 		WebElement logoutBtn = sideMenu.getButtonFromSideMenu("Logout");
 
 		logoutBtn.click();
 	}
 
+	/**
+	 * Verifies that the user has successfully logged out.
+	 */
 	public void verifyThatUserLoggedOut() {
 		
 		WebElement messageEl = waitForElementToBeVisible(accountLogoutMessage);

@@ -1,19 +1,38 @@
 package api.pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * This class represents the payload for creating a GitHub repository.
+ * It includes fields for repository details such as name, description, and visibility.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CreateRepo {
 
+	/**
+	 * The name of the repository.
+	 */
 	private String name;
+
+	/**
+	 * The description of the repository.
+	 */
 	private String description;
+
+	/**
+	 * The homepage URL of the repository.
+	 */
 	private String homepage;
 
+	/**
+	 * Indicates whether the repository is a template.
+	 */
 	private boolean is_template;
-	
-	// This annotation maps the JSON property "private" to the Java field "_private"
+
+	/**
+	 * Indicates whether the repository is private.
+	 */
 	@JsonProperty("private")
 	private boolean _private;
 

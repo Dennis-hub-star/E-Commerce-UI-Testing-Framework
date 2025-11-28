@@ -4,9 +4,19 @@ import java.io.FileInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * ZipUtils class provides utility methods for compressing folders and files into a zip archive.
+ * It supports recursive zipping of directories and their contents.
+ */
 public class ZipUtils {
 
-	 // Method to zip a folder
+    /**
+     * Compresses a folder into a zip file.
+     * 
+     * @param sourceFolderPath Path to the folder to be compressed.
+     * @param zipFilePath Path where the zip file will be created.
+     * @throws IOException If there is an error during the zipping process.
+     */
     public static void zipFolder(String sourceFolderPath, String zipFilePath) throws IOException {
         // Create a FileOutputStream that will write bytes into the final zip file
         FileOutputStream fos = new FileOutputStream(zipFilePath); // creates Reports.zip file (or overwrites)
@@ -27,7 +37,14 @@ public class ZipUtils {
         fos.close();
     }
 
-    // Helper method (recursive) to add files and folders into the zip
+    /**
+     * Recursively adds files and directories to the zip file.
+     * 
+     * @param fileToZip File or directory to be added to the zip.
+     * @param fileName Name of the file or directory in the zip.
+     * @param zos ZipOutputStream to write the zip entries.
+     * @throws IOException If there is an error during the zipping process.
+     */
     private static void zipFile(File fileToZip, String fileName, ZipOutputStream zos) throws IOException {
         // Skip hidden files (optional safeguard)
         if (fileToZip.isHidden()) {

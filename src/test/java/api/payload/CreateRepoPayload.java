@@ -4,8 +4,17 @@ import java.util.HashMap;
 
 import api.pojos.CreateRepo;
 
+/**
+ * This class provides utility methods for creating payloads for repository operations.
+ */
 public class CreateRepoPayload {
 
+	/**
+	 * Generates a payload for creating a new repository.
+	 * 
+	 * @param input A HashMap containing repository details such as name, description, and visibility.
+	 * @return A CreateRepo object populated with the provided details.
+	 */
 	public static CreateRepo getPayload(HashMap<String, String> input) {
 
 		CreateRepo createRepo = new CreateRepo();
@@ -26,7 +35,13 @@ public class CreateRepoPayload {
 
 	}
 
-	public static CreateRepo updateRepoDescription(HashMap<String,String>input) {
+	/**
+	 * Generates a payload for updating the description of an existing repository.
+	 * 
+	 * @param input A HashMap containing the repository name and new description.
+	 * @return A CreateRepo object with updated description details.
+	 */
+	public static CreateRepo updateRepoDescription(HashMap<String, String> input) {
 
 		CreateRepo createRepo = new CreateRepo();
 		

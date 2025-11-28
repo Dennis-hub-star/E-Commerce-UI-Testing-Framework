@@ -4,13 +4,15 @@
   <listeners>
 	<listener class-name = "ui.Listeners.Listeners" />
 </listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="OrderPlacementAndOrderHistory">
     <classes>
-      <class name="ui.base.BaseTest"/> 
-      <class name="ui.tests.positiveTests.RegisterAndLogin"/>
-      <class name="api.test.positiveTests.PositiveE2ETests"/>
-      <!-- Add your cleanup class here -->
-      <class name="ui.tests.TestCleanup"/>
+      <class name="ui.tests.positiveTests.OrderPlacementAndOrderHistory"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+  
+    <test thread-count="5" name="API-E2E-Test">
+    <classes>
+      <class name="api.test.positiveTests.PositiveE2ETests"/>
+    </classes>
+  </test> 
+</suite> 

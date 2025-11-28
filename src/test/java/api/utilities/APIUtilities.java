@@ -10,10 +10,20 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import ui.utils.UiUtilities;
 
+/**
+ * This class provides utility methods for API testing, including request specifications
+ * and path parameter generation.
+ */
 public class APIUtilities {
 
 	private static String file = "api.global";
 
+	/**
+	 * Generates a request specification with headers and base URI for API requests.
+	 * 
+	 * @return A RequestSpecification object with configured headers and base URI.
+	 * @throws IOException If an error occurs while reading configuration values.
+	 */
 	public static RequestSpecification requestSpecification() throws IOException {
 
 		String token = Utilities.getGlobalValue("token", file);
@@ -29,6 +39,13 @@ public class APIUtilities {
 
 	}
 
+	/**
+	 * Generates path parameters for API requests.
+	 * 
+	 * @param repoName The name of the repository.
+	 * @return A Map containing path parameters for the API request.
+	 * @throws IOException If an error occurs while reading configuration values.
+	 */
 	public static Map<String, String> getPathParams(String repoName) throws IOException {
 
 		Map<String, String> pathParams = new HashMap<String, String>();
@@ -37,6 +54,13 @@ public class APIUtilities {
 		return pathParams;
 	}
 
+	/**
+	 * Extracts repository names from a JSON file and prepares them for TestNG data providers.
+	 * 
+	 * @param filePath The path to the JSON file containing repository data.
+	 * @return A 2D Object array containing repository names.
+	 * @throws IOException If an error occurs while reading the JSON file.
+	 */
 	public static Object[][] getRepoNamesFromJson(String filePath) throws IOException {
 		String path = System.getProperty("user.dir") + filePath;
 

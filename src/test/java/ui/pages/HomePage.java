@@ -8,6 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Home Page of the application.
+ * Provides methods to navigate to the login and registration pages.
+ */
 public class HomePage extends UiUtilities {
 
 	WebDriver driver;
@@ -15,6 +19,11 @@ public class HomePage extends UiUtilities {
 	LoginPage loginPage;
 	RegistrationPage registrationPage;
 
+	/**
+	 * Constructor to initialize the HomePage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	public HomePage(WebDriver driver) {
 
 		super(driver);
@@ -30,6 +39,11 @@ public class HomePage extends UiUtilities {
 
 	By register = By.cssSelector(".mz-sub-menu-96 li:last-child");
 
+	/**
+	 * Navigates to the Registration Page.
+	 * 
+	 * @return RegistrationPage object representing the registration page.
+	 */
 	public RegistrationPage goToRegistrationPage() {
 
 		actions().moveToElement(myAccount).perform();
@@ -40,6 +54,11 @@ public class HomePage extends UiUtilities {
 
 	}
 
+	/**
+	 * Navigates to the Login Page.
+	 * 
+	 * @return LoginPage object representing the login page.
+	 */
 	public LoginPage goToLoginPage() {
 
 		actions().moveToElement(myAccount).perform();

@@ -13,41 +13,22 @@ import ui.pages.CheckoutPage;
 import ui.pages.LoginPage;
 import ui.pages.OrderConfirmPage;
 import ui.pages.OrderHistoryPage;
-import ui.pages.RegistrationPage;
-import ui.pages.RegistrationSuccessPage;
 import ui.pages.SearchResultsPage;
 
-public class RegisterAndLogin extends BaseTest {
+/**
+ * This class contains positive test cases for placing an order and validating order history.
+ * It ensures that the end-to-end purchase flow and order history functionality work as expected.
+ */
+public class OrderPlacementAndOrderHistory extends BaseTest {
 
-
-	@Test(dataProvider = "validRegistrationData", dataProviderClass = DataProviders.class)
-	public void test(HashMap<String, String> input) {
-
-		boolean agreePrivacyPolicy = Boolean.parseBoolean(input.get("agreePrivacyPolicy"));
-		String email = input.get("email") + System.currentTimeMillis() + "@gmail.com";
-
-		RegistrationPage registrationPage = navigationBar.goToRegistrationPage();
-		RegistrationSuccessPage registrationSuccess = registrationPage.register(input.get("firstName"),
-				input.get("lastName"), email, input.get("telephone"), input.get("password"),
-				input.get("confirmPassword"), input.get("subscribeNewsletter"), agreePrivacyPolicy);
-
-		registrationSuccess.verifyThatUserRegistered();
-
-	}
-
-	@Test(dataProvider = "validLoginData", dataProviderClass = DataProviders.class)
-	public void testLogin(HashMap<String, String> input) {
-
-		LoginPage userLogin = navigationBar.goToLoginPage();
-		userLogin.login(input.get("email"), input.get("password"));
-		userLogin.verifyThatUserLoggedIn();
-		userLogin.userLogout();
-		userLogin.verifyThatUserLoggedOut();
-
-	}
-
+	/**
+	 * Test method to verify the end-to-end order placement process.
+	 * 
+	 * @param input A HashMap containing test data such as email, product details, and pricing information.
+	 * @throws InterruptedException If the thread is interrupted during execution.
+	 */
 	@Test(dataProvider = "endToEndPurchaseData", dataProviderClass = DataProviders.class)
-	public void orderDetailsConfirmationTest(HashMap<String, String> input) throws InterruptedException {
+	public void placeOrderAndValidateOrderHistoryTest(HashMap<String, String> input) throws InterruptedException {
 		// To be implemented
 		LoginPage userLogin = navigationBar.goToLoginPage();
 		userLogin.login(input.get("email"), input.get("password"));
@@ -82,7 +63,15 @@ public class RegisterAndLogin extends BaseTest {
 
 	}
 
-	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = { "orderDetailsConfirmationTest" })
+	/**
+	 * Test method to verify the order history details.
+	 * 
+	 * @param input A HashMap containing test data such as customer name, order status, and total amount.
+	 * @throws InterruptedException If the thread is interrupted during execution.
+	 * @throws IOException If an I/O error occurs during execution.
+	 */
+	@Test(dataProvider = "orderHistoryData", dataProviderClass = DataProviders.class, dependsOnMethods = {
+			"placeOrderAndValidateOrderHistoryTest" })
 	public void orderHistoryTest(HashMap<String, String> input) throws InterruptedException, IOException {
 		LoginPage userLogin = navigationBar.goToLoginPage();
 		AccountPage accountPage = userLogin.login(input.get("email"), input.get("password"));

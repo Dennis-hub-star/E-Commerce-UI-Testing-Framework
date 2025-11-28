@@ -5,9 +5,21 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import java.io.File;
 
+/**
+ * EmailUtils class provides utility methods for sending emails with attachments.
+ * It uses the JavaMail API to configure and send emails.
+ */
 public class EmailUtils {
-	
-	public static void sendEmailWithAttachment(String toEmail, String subject, String body, String attachmentPath) {
+
+    /**
+     * Sends an email with an attachment to the specified recipient.
+     * 
+     * @param toEmail Recipient's email address.
+     * @param subject Subject of the email.
+     * @param body Body of the email.
+     * @param attachmentPath Path to the file to be attached.
+     */
+    public static void sendEmailWithAttachment(String toEmail, String subject, String body, String attachmentPath) {
 
         // Sender’s email credentials (use app password if using Gmail)
         final String fromEmail = "mamyala21@gmail.com"; 

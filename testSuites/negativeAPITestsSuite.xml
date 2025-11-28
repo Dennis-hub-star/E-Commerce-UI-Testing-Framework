@@ -4,13 +4,28 @@
   <listeners>
 	<listener class-name = "ui.Listeners.Listeners" />
 </listeners>
-  <test thread-count="5" name="Test">
-    <classes>
+  
+  <test thread-count="5" name="createRepoErrorValidation">
+   	<classes>
       <class name="api.test.negativeTests.CreateRepoNegativeTests"/> 
-      <class name="api.test.negativeTests.DeleteRepoNegativeTest"/>
-      <class name="api.test.negativeTests.GetRepoNegativeTests"/>
-      <class name="api.test.negativeTests.UpdateRepoNegativeTest"/>
-      <class name="ui.tests.TestCleanup"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+  
+  <test thread-count="5" name="deleteRepoErrorValidation">
+   	<classes>
+      <class name="api.test.negativeTests.DeleteRepoNegativeTest"/>
+    </classes>
+  </test>
+  
+  <test thread-count="5" name="getRepoErrorValidation">
+   	<classes>
+      <class name="api.test.negativeTests.GetRepoNegativeTests"/>
+    </classes>
+  </test> 
+  
+  <test thread-count="5" name="updateRepoErrorValidation">
+   	<classes>
+      <class name="api.test.negativeTests.UpdateRepoNegativeTest"/>
+    </classes>
+  </test>   
+</suite> 

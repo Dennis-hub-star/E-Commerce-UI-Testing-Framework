@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Order History Page of the application.
+ * Provides methods to validate order history details.
+ */
 public class OrderHistoryPage extends UiUtilities {
 
 	WebDriver driver;
@@ -17,6 +21,11 @@ public class OrderHistoryPage extends UiUtilities {
 	private String orderDate;
 	private String numberOfItems;
 
+	/**
+	 * Constructor to initialize the OrderHistoryPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	public OrderHistoryPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -25,6 +34,9 @@ public class OrderHistoryPage extends UiUtilities {
 
 	By cartTableHeaders = By.cssSelector(".table-bordered thead tr td");
 
+	/**
+	 * Sets the order history values by extracting data from the table.
+	 */
 	private void setOrderHistoryValues() {
 
 		waitForVisibilityOfElementLocatedBy(cartTableHeaders);
@@ -55,6 +67,14 @@ public class OrderHistoryPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Validates the order history details against expected values.
+	 * 
+	 * @param expectedCustomerName Expected customer name.
+	 * @param expectedStatus Expected order status.
+	 * @param expectedTotalAmount Expected total amount.
+	 * @param expectedNumberOfItems Expected number of items in the order.
+	 */
 	public void validateOrderHistoryDetails(String expectedCustomerName, String expectedStatus,
 			String expectedTotalAmount, String expectedNumberOfItems) {
 
@@ -67,6 +87,13 @@ public class OrderHistoryPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Retrieves a specific cell element from the order history table.
+	 * 
+	 * @param rowIndex The row index of the cell.
+	 * @param columnIndex The column index of the cell.
+	 * @return The WebElement representing the cell.
+	 */
 	private WebElement getElement(int rowIndex, int columnIndex) {
 		WebElement tableCellEl = driver.findElement(
 				By.xpath("//*[@class = 'table-responsive']/table/tbody/tr[" + rowIndex + "]/td[" + columnIndex + "]"));

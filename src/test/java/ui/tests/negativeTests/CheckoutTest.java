@@ -9,8 +9,18 @@ import ui.pages.CheckoutPage;
 import ui.pages.LoginPage;
 import ui.pages.SearchResultsPage;
 
+/**
+ * This class contains negative test cases for the Checkout functionality.
+ * It verifies that invalid checkout attempts are handled correctly.
+ */
 public class CheckoutTest extends BaseTest {
 
+	/**
+	 * Test method to verify that checkout fails with invalid billing details.
+	 * 
+	 * @param input A HashMap containing test data such as user details, product details, and expected error messages.
+	 * @throws InterruptedException If the thread is interrupted during execution.
+	 */
 	@Test(dataProvider = "negativeCheckoutDataProvider", dataProviderClass = NegativeTestDataProviders.class)
 	public void negativeCheckoutTest(java.util.HashMap<String, String> input) throws InterruptedException {
 

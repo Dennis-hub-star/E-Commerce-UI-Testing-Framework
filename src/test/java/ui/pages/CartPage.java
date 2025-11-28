@@ -3,7 +3,6 @@ package ui.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import ui.utils.UiUtilities;
 
+/**
+ * Represents the Cart Page of the application.
+ * Provides methods to interact with the cart, such as editing product quantities,
+ * verifying amounts, and proceeding to checkout.
+ */
 public class CartPage extends UiUtilities {
 
 	private WebDriver driver;
@@ -20,6 +24,11 @@ public class CartPage extends UiUtilities {
 	private String subTotal;
 	private String grandTotal;
 
+	/**
+	 * Constructor to initialize the CartPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	CartPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -49,6 +58,9 @@ public class CartPage extends UiUtilities {
 	@FindBy(css = ".buttons a:last-of-type")
 	private WebElement checkoutBtn;
 
+	/**
+	 * Navigates to the cart page.
+	 */
 	public void goToCartPage() {
 
 		waitUntilElementIsClickable(cartIcon);
@@ -58,6 +70,12 @@ public class CartPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Edits the quantity of a product in the cart.
+	 * 
+	 * @param quantity The new quantity to set.
+	 * @return CheckoutPage object representing the checkout page.
+	 */
 	public CheckoutPage editProductQuantity(String quantity) {
 
 		List<WebElement> cartTableRows = getElements(tableRows);
@@ -90,6 +108,12 @@ public class CartPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Verifies the amounts in the cart against expected values.
+	 * 
+	 * @param expectedUnitPrice Expected unit price of the product.
+	 * @param flatShippingRate Expected flat shipping rate.
+	 */
 	public void verifyAmountsInCart(String expectedUnitPrice, String flatShippingRate) {
 
 		double expectedTot = Double.parseDouble(unitPrice) * Integer.parseInt(quantity); // Calculate
@@ -111,6 +135,11 @@ public class CartPage extends UiUtilities {
 		grandTotal = grandTotalElement.getText().replace("$", "").trim();
 	}
 
+	/**
+	 * Validates the cart summary table against the expected subtotal.
+	 * 
+	 * @param subTotal Expected subtotal.
+	 */
 	public void validateCartSummaryTable(String subTotal) {
 
 		setCartSummeryAmounts();
@@ -128,6 +157,9 @@ public class CartPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Verifies that the product quantity in the cart was updated successfully.
+	 */
 	public void verifyThatProductQuantityGotUpdated() {
 		WebElement alert = waitForVisibilityOfElementLocatedBy(successAlert);
 		try {
@@ -139,11 +171,19 @@ public class CartPage extends UiUtilities {
 		}
 	}
 
+	/**
+	 * Navigates to the checkout page.
+	 */
 	public void goToCheckoutPage() {
 		waitUntilElementIsClickable(checkoutBtn);
 		checkoutBtn.click();
 	}
 
+	/**
+	 * Verifies that a product not in stock displays the correct alert message.
+	 * 
+	 * @param string The expected alert message.
+	 */
 	public void verifyProductNotInStockAlert(String string) {
 		// TODO Auto-generated method stub
 
@@ -152,6 +192,9 @@ public class CartPage extends UiUtilities {
 
 	}
 
+	/**
+	 * Removes an item from the cart and verifies the cart is empty.
+	 */
 	public void removeItemFromCart() {
 		List<WebElement> cartTableRows = getElements(tableRows);
 
