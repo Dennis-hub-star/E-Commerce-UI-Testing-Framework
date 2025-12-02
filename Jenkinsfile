@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        API_TOKEN = credentials('token')
-    }
-
     parameters {
         choice(
             name: 'SUITE',
@@ -21,10 +17,13 @@ pipeline {
         }
 
         stage('Run Selected Test Suite') {
+            environment {
+                // This makes API_TOKEN available as environment variable
+                API_TOKEN = credentials('token')
+            }
             steps {
-                withCredentials([string(credentialsId: 'token', variable: 'API_TOKEN')]) {
-                    bat "mvn clean test -P%SUITE%"
-                }
+                // Use double quotes for Windows batch to pass environment variable
+                bat "mvn clean test -P%SUITE% -Dapi.token=\"%API_TOKEN%\""
             }
         }
     }
