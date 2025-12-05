@@ -218,7 +218,7 @@ public class UiUtilities {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 
-		String destPath = System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
+		String destPath = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
 		File file = new File(destPath);
 
 		file.getParentFile().mkdirs();

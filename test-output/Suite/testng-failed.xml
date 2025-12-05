@@ -1,42 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="createRepoErrorValidation(failed)">
+  <listeners>
+    <listener class-name="common.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Login(failed)">
     <classes>
-      <class name="api.test.negativeTests.CreateRepoNegativeTests">
+      <class name="ui.tests.positiveTests.Login">
         <methods>
-          <include name="createExistingRepo" invocation-numbers="0"/>
-          <include name="createRepoWithLongName" invocation-numbers="0"/>
-          <include name="createRepoWithoutName" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+          <include name="testLogin" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- api.test.negativeTests.CreateRepoNegativeTests -->
+      </class> <!-- ui.tests.positiveTests.Login -->
     </classes>
-  </test> <!-- createRepoErrorValidation(failed) -->
-  <test thread-count="5" name="deleteRepoErrorValidation(failed)">
-    <classes>
-      <class name="api.test.negativeTests.DeleteRepoNegativeTest">
-        <methods>
-          <include name="deleteNonExistentRepo" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- api.test.negativeTests.DeleteRepoNegativeTest -->
-    </classes>
-  </test> <!-- deleteRepoErrorValidation(failed) -->
-  <test thread-count="5" name="getRepoErrorValidation(failed)">
-    <classes>
-      <class name="api.test.negativeTests.GetRepoNegativeTests">
-        <methods>
-          <include name="getNonExistantRepo" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- api.test.negativeTests.GetRepoNegativeTests -->
-    </classes>
-  </test> <!-- getRepoErrorValidation(failed) -->
-  <test thread-count="5" name="updateRepoErrorValidation(failed)">
-    <classes>
-      <class name="api.test.negativeTests.UpdateRepoNegativeTest">
-        <methods>
-          <include name="updateRepoWithNonExistentName" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- api.test.negativeTests.UpdateRepoNegativeTest -->
-    </classes>
-  </test> <!-- updateRepoErrorValidation(failed) -->
+  </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->

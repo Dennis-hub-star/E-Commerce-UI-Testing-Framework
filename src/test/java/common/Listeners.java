@@ -36,8 +36,7 @@ public class Listeners extends BaseTest implements ITestListener {
 		ITestListener.super.onTestStart(result);
 
 		test = extent.createTest(result.getMethod().getMethodName());
-		// test =
-		// ExtentReportsNG.ExtentReportsObject().createTest(result.getMethod().getMethodName());
+
 		extentTest.set(test);
 	}
 
@@ -78,11 +77,13 @@ public class Listeners extends BaseTest implements ITestListener {
 
 		try {
 			filePath = UiUtilities.getScreenshot(result.getMethod().getMethodName(), driver);
+			System.out.println("Screenshot saved at: " + filePath);
+
+		
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
-
 		extentTest.get().addScreenCaptureFromPath(filePath);
 	}
 

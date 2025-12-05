@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,12 +50,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\DENNIS\Desktop\API Testing\my_e-Commerce_Site_Project\testSuites\hybridE2ETest.xml</span>
+                    <span>C:\Users\DENNIS\Desktop\API Testing\my_e-Commerce_Site_Project\testSuites\loginSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,76 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">12 methods,   12 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="createRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)">createRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.Login" class="method navigator-link" hash-for-method="testLogin({password=jessica@123, email=jessica.alba@gmail.com})">testLogin({password=jessica@123, email=jessica.alba@gmail.com})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="createRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)">createRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.Login" class="method navigator-link" hash-for-method="testLogin({password=dismond@123, email=dismond.newton@gmail.com})">testLogin({password=dismond@123, email=dismond.newton@gmail.com})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="deleteRepoTest(my-second-repo)">deleteRepoTest(my-second-repo)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="deleteRepoTest(my-new-repo)">deleteRepoTest(my-new-repo)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="getRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)">getRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="getRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)">getRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.OrderPlacementAndOrderHistory" class="method navigator-link" hash-for-method="orderHistoryTest({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba...)">orderHistoryTest({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.OrderPlacementAndOrderHistory" class="method navigator-link" hash-for-method="orderHistoryTest({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newt...)">orderHistoryTest({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newt...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.OrderPlacementAndOrderHistory" class="method navigator-link" hash-for-method="placeOrderAndValidateOrderHistoryTest({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShip...)">placeOrderAndValidateOrderHistoryTest({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShip...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ui.tests.positiveTests.OrderPlacementAndOrderHistory" class="method navigator-link" hash-for-method="placeOrderAndValidateOrderHistoryTest({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShip...)">placeOrderAndValidateOrderHistoryTest({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShip...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="updateRepoTest({name=my-second-repo, description=Updated description for my second repository})">updateRepoTest({name=my-second-repo, description=Updated description for my second repository})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="api.test.positiveTests.PositiveE2ETests" class="method navigator-link" hash-for-method="updateRepoTest({name=my-new-repo, description=Updated description for my e-commerce site repository})">updateRepoTest({name=my-new-repo, description=Updated description for my e-commerce site repository})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -173,122 +123,48 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">ui.tests.positiveTests.OrderPlacementAndOrderHistory</span>
+              <img src="failed.png"/>
+              <span class="class-name">ui.tests.positiveTests.Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="orderHistoryTest({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba...)">
-                  </a> <!-- orderHistoryTest({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba...) -->
-                  <span class="method-name">orderHistoryTest</span>
-                  <span class="parameters">({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba@gmail.com, customerName=Jessica Alba, status=Pending})</span>
+                  <a name="testLogin({password=jessica@123, email=jessica.alba@gmail.com})">
+                  </a> <!-- testLogin({password=jessica@123, email=jessica.alba@gmail.com}) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">({password=jessica@123, email=jessica.alba@gmail.com})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Account Logouts] but found [Account Logout]
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:135)
+	at ui.pages.LoginPage.verifyThatUserLoggedOut(LoginPage.java:115)
+	at ui.tests.positiveTests.Login.testLogin(Login.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="orderHistoryTest({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newt...)">
-                  </a> <!-- orderHistoryTest({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newt...) -->
-                  <span class="method-name">orderHistoryTest</span>
-                  <span class="parameters">({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newton@gmail.com, customerName=Dismond Newton, status=Pending})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="placeOrderAndValidateOrderHistoryTest({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShip...)">
-                  </a> <!-- placeOrderAndValidateOrderHistoryTest({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShip...) -->
-                  <span class="method-name">placeOrderAndValidateOrderHistoryTest</span>
-                  <span class="parameters">({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=202.00, email=jessica.alba@gmail.com, productName=iPhone})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="placeOrderAndValidateOrderHistoryTest({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShip...)">
-                  </a> <!-- placeOrderAndValidateOrderHistoryTest({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShip...) -->
-                  <span class="method-name">placeOrderAndValidateOrderHistoryTest</span>
-                  <span class="parameters">({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=600.00, email=dismond.newton@gmail.com, productName=Samsung})</span>
+                  <a name="testLogin({password=dismond@123, email=dismond.newton@gmail.com})">
+                  </a> <!-- testLogin({password=dismond@123, email=dismond.newton@gmail.com}) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">({password=dismond@123, email=dismond.newton@gmail.com})</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Account Logouts] but found [Account Logout]
+	at ui.utils.UiUtilities.verifyText(UiUtilities.java:135)
+	at ui.pages.LoginPage.verifyThatUserLoggedOut(LoginPage.java:115)
+	at ui.tests.positiveTests.Login.testLogin(Login.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">api.test.positiveTests.PositiveE2ETests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="createRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)">
-                  </a> <!-- createRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...) -->
-                  <span class="method-name">createRepoTest</span>
-                  <span class="parameters">({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=https://github.com, statusCode=201})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)">
-                  </a> <!-- createRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...) -->
-                  <span class="method-name">createRepoTest</span>
-                  <span class="parameters">({name=my-second-repo, description=This is my second repository, private=true, homepage=https://github.com, statusCode=201})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="deleteRepoTest(my-second-repo)">
-                  </a> <!-- deleteRepoTest(my-second-repo) -->
-                  <span class="method-name">deleteRepoTest</span>
-                  <span class="parameters">(my-second-repo)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="deleteRepoTest(my-new-repo)">
-                  </a> <!-- deleteRepoTest(my-new-repo) -->
-                  <span class="method-name">deleteRepoTest</span>
-                  <span class="parameters">(my-new-repo)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="getRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)">
-                  </a> <!-- getRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...) -->
-                  <span class="method-name">getRepoTest</span>
-                  <span class="parameters">({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=https://github.com, statusCode=201})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="getRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)">
-                  </a> <!-- getRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...) -->
-                  <span class="method-name">getRepoTest</span>
-                  <span class="parameters">({name=my-second-repo, description=This is my second repository, private=true, homepage=https://github.com, statusCode=201})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="updateRepoTest({name=my-second-repo, description=Updated description for my second repository})">
-                  </a> <!-- updateRepoTest({name=my-second-repo, description=Updated description for my second repository}) -->
-                  <span class="method-name">updateRepoTest</span>
-                  <span class="parameters">({name=my-second-repo, description=Updated description for my second repository})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="updateRepoTest({name=my-new-repo, description=Updated description for my e-commerce site repository})">
-                  </a> <!-- updateRepoTest({name=my-new-repo, description=Updated description for my e-commerce site repository}) -->
-                  <span class="method-name">updateRepoTest</span>
-                  <span class="parameters">({name=my-new-repo, description=Updated description for my e-commerce site repository})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\DENNIS\Desktop\API Testing\my_e-Commerce_Site_Project\testSuites\hybridE2ETest.xml</span>
+            <span class="header-content">C:\Users\DENNIS\Desktop\API Testing\my_e-Commerce_Site_Project\testSuites\loginSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -298,16 +174,11 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;common.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;OrderPlacementAndOrderHistory&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Login&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ui.tests.positiveTests.OrderPlacementAndOrderHistory&quot;/&gt;
+      &lt;class name=&quot;ui.tests.positiveTests.Login&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- OrderPlacementAndOrderHistory --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;API-E2E-Test&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;api.test.positiveTests.PositiveE2ETests&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- API-E2E-Test --&gt;
+  &lt;/test&gt; &lt;!-- Login --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -319,10 +190,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">OrderPlacementAndOrderHistory (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">API-E2E-Test (1 class)</span>
+                <span class="test-name">Login (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -348,60 +216,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(12);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'placeOrderAndValidateOrderHistoryTest')
-data.setCell(0, 2, 'ui.tests.positiveTests.OrderPlacementAndOrderHistory')
-data.setCell(0, 3, 99700);
+data.setCell(0, 1, 'testLogin')
+data.setCell(0, 2, 'ui.tests.positiveTests.Login')
+data.setCell(0, 3, 41217);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'placeOrderAndValidateOrderHistoryTest')
-data.setCell(1, 2, 'ui.tests.positiveTests.OrderPlacementAndOrderHistory')
-data.setCell(1, 3, 97431);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'orderHistoryTest')
-data.setCell(2, 2, 'ui.tests.positiveTests.OrderPlacementAndOrderHistory')
-data.setCell(2, 3, 36496);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'orderHistoryTest')
-data.setCell(3, 2, 'ui.tests.positiveTests.OrderPlacementAndOrderHistory')
-data.setCell(3, 3, 35515);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'createRepoTest')
-data.setCell(4, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(4, 3, 19691);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createRepoTest')
-data.setCell(5, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(5, 3, 1971);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'updateRepoTest')
-data.setCell(6, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(6, 3, 1287);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'getRepoTest')
-data.setCell(7, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(7, 3, 1218);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'updateRepoTest')
-data.setCell(8, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(8, 3, 1209);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'deleteRepoTest')
-data.setCell(9, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(9, 3, 1104);
-data.setCell(10, 0, 10)
-data.setCell(10, 1, 'getRepoTest')
-data.setCell(10, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(10, 3, 992);
-data.setCell(11, 0, 11)
-data.setCell(11, 1, 'deleteRepoTest')
-data.setCell(11, 2, 'api.test.positiveTests.PositiveE2ETests')
-data.setCell(11, 3, 938);
+data.setCell(1, 1, 'testLogin')
+data.setCell(1, 2, 'ui.tests.positiveTests.Login')
+data.setCell(1, 3, 31118);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -427,90 +255,35 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ui.tests.positiveTests.OrderPlacementAndOrderHistory</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ui.tests.positiveTests.Login</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">placeOrderAndValidateOrderHistoryTest({unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShip...)</span>
-                <span class="method-start">59795 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin({password=jessica@123, email=jessica.alba@gmail.com})</span>
+                <span class="method-start">51856 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">159670 ms</span>
+                <span class="method-start">94062 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">162494 ms</span>
+                <span class="method-start">100431 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">placeOrderAndValidateOrderHistoryTest({unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShip...)</span>
-                <span class="method-start">202088 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin({password=dismond@123, email=dismond.newton@gmail.com})</span>
+                <span class="method-start">139748 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">299533 ms</span>
+                <span class="method-start">171798 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">launchApplication</span>
-                <span class="method-start">301216 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">orderHistoryTest({totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba...)</span>
-                <span class="method-start">338509 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">374041 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">launchApplication</span>
-                <span class="method-start">376912 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">orderHistoryTest({totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newt...)</span>
-                <span class="method-start">414126 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">450637 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">api.test.positiveTests.PositiveE2ETests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">createRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)</span>
-                <span class="method-start">460874 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">createRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)</span>
-                <span class="method-start">480593 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">getRepoTest({name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=...)</span>
-                <span class="method-start">482653 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">getRepoTest({name=my-second-repo, description=This is my second repository, private=true, homepage=https://githu...)</span>
-                <span class="method-start">483961 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">updateRepoTest({name=my-new-repo, description=Updated description for my e-commerce site repository})</span>
-                <span class="method-start">485090 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">updateRepoTest({name=my-second-repo, description=Updated description for my second repository})</span>
-                <span class="method-start">486308 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">deleteRepoTest(my-new-repo)</span>
-                <span class="method-start">487670 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">deleteRepoTest(my-second-repo)</span>
-                <span class="method-start">488636 ms</span>
-              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
