@@ -1,124 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-01T22:49:29 SAST" name="Suite" finished-at="2025-12-01T22:50:19 SAST" duration-ms="50098">
+  <suite started-at="2025-12-05T12:23:10 SAST" name="Suite" finished-at="2025-12-05T12:31:22 SAST" duration-ms="492048">
     <groups>
     </groups>
-    <test started-at="2025-12-01T22:49:29 SAST" name="createRepoErrorValidation" finished-at="2025-12-01T22:49:56 SAST" duration-ms="26903">
-      <class name="api.test.negativeTests.CreateRepoNegativeTests">
-        <test-method signature="createExistingRepo(java.util.HashMap)[pri:0, instance:api.test.negativeTests.CreateRepoNegativeTests@36804139]" started-at="2025-12-01T22:49:31 SAST" name="createExistingRepo" data-provider="createExistingRepoProvider" finished-at="2025-12-01T22:49:53 SAST" duration-ms="22439" status="PASS">
+    <test started-at="2025-12-05T12:23:10 SAST" name="OrderPlacementAndOrderHistory" finished-at="2025-12-05T12:30:49 SAST" duration-ms="459048">
+      <class name="ui.tests.positiveTests.OrderPlacementAndOrderHistory">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:23:13 SAST" name="launchApplication" finished-at="2025-12-05T12:24:12 SAST" duration-ms="59766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="placeOrderAndValidateOrderHistoryTest(java.util.HashMap)[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:24:12 SAST" name="placeOrderAndValidateOrderHistoryTest" data-provider="endToEndPurchaseData" finished-at="2025-12-05T12:25:52 SAST" duration-ms="99700" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{private=false, code=custom, is_template=false, field=name, name=newrepo, description=Repo already exists, message=Repository creation failed., homepage=https://example.com, statusCode=422}]]>
+                <![CDATA[{unitPrice=101.00, password=jessica@123, productQuantity=2, total=207.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=202.00, email=jessica.alba@gmail.com, productName=iPhone}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createExistingRepo -->
-        <test-method signature="createRepoWithLongName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.CreateRepoNegativeTests@36804139]" started-at="2025-12-01T22:49:54 SAST" name="createRepoWithLongName" data-provider="createRepoWithLongNameProvider" finished-at="2025-12-01T22:49:55 SAST" duration-ms="1057" status="PASS">
+        </test-method> <!-- placeOrderAndValidateOrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:25:52 SAST" name="tearDown" finished-at="2025-12-05T12:25:55 SAST" duration-ms="2821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:25:55 SAST" name="launchApplication" finished-at="2025-12-05T12:26:35 SAST" duration-ms="39593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="placeOrderAndValidateOrderHistoryTest(java.util.HashMap)[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:26:35 SAST" name="placeOrderAndValidateOrderHistoryTest" data-provider="endToEndPurchaseData" finished-at="2025-12-05T12:28:12 SAST" duration-ms="97431" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{private=false, code=custom, is_template=false, field=name, name=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, description=Overly long name (more than 100 chars), message=Repository creation failed., homepage=https://example.com, statusCode=422}]]>
+                <![CDATA[{unitPrice=200.00, password=dismond@123, productQuantity=3, total=605.00, agreeToTerms=yes, flatShippingRate=5.00, availability=In Stock, subTotal=600.00, email=dismond.newton@gmail.com, productName=Samsung}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRepoWithLongName -->
-        <test-method signature="createRepoWithoutName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.CreateRepoNegativeTests@36804139]" started-at="2025-12-01T22:49:55 SAST" name="createRepoWithoutName" data-provider="repoWithoutNameProvider" finished-at="2025-12-01T22:49:56 SAST" duration-ms="848" status="PASS">
+        </test-method> <!-- placeOrderAndValidateOrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:28:12 SAST" name="tearDown" finished-at="2025-12-05T12:28:14 SAST" duration-ms="1603" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:28:14 SAST" name="launchApplication" finished-at="2025-12-05T12:28:51 SAST" duration-ms="37293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistoryTest(java.util.HashMap)[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:28:51 SAST" name="orderHistoryTest" data-provider="orderHistoryData" finished-at="2025-12-05T12:29:27 SAST" depends-on-methods="ui.tests.positiveTests.OrderPlacementAndOrderHistory.placeOrderAndValidateOrderHistoryTest" duration-ms="35515" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{private=false, code=missing_field, is_template=false, field=name, name=, description=Missing name field should fail, message=New repository name must not be blank, homepage=https://example.com, statusCode=422}]]>
+                <![CDATA[{totalAmount=207.00, password=jessica@123, numberOfItems=1, orderDate=31/10/2025, email=jessica.alba@gmail.com, customerName=Jessica Alba, status=Pending}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRepoWithoutName -->
-      </class> <!-- api.test.negativeTests.CreateRepoNegativeTests -->
-    </test> <!-- createRepoErrorValidation -->
-    <test started-at="2025-12-01T22:49:59 SAST" name="deleteRepoErrorValidation" finished-at="2025-12-01T22:50:01 SAST" duration-ms="2185">
-      <class name="api.test.negativeTests.DeleteRepoNegativeTest">
-        <test-method signature="deleteNonExistentRepo(java.util.HashMap)[pri:0, instance:api.test.negativeTests.DeleteRepoNegativeTest@75c56eb9]" started-at="2025-12-01T22:49:59 SAST" name="deleteNonExistentRepo" data-provider="deleteNonExistentRepoProvider" finished-at="2025-12-01T22:50:01 SAST" duration-ms="1315" status="PASS">
+        </test-method> <!-- orderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:29:27 SAST" name="tearDown" finished-at="2025-12-05T12:29:29 SAST" duration-ms="2869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:29:29 SAST" name="launchApplication" finished-at="2025-12-05T12:30:07 SAST" duration-ms="37211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistoryTest(java.util.HashMap)[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:30:07 SAST" name="orderHistoryTest" data-provider="orderHistoryData" finished-at="2025-12-05T12:30:43 SAST" depends-on-methods="ui.tests.positiveTests.OrderPlacementAndOrderHistory.placeOrderAndValidateOrderHistoryTest" duration-ms="36496" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Non-Existent-Repo, message=Not Found, statusCode=404}]]>
+                <![CDATA[{totalAmount=605.00, password=dismond@123, numberOfItems=1, orderDate=31/10/2025, email=dismond.newton@gmail.com, customerName=Dismond Newton, status=Pending}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteNonExistentRepo -->
-        <test-method signature="deleteRepoWithoutName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.DeleteRepoNegativeTest@75c56eb9]" started-at="2025-12-01T22:50:01 SAST" name="deleteRepoWithoutName" data-provider="deleteRepoWithoutNameProvider" finished-at="2025-12-01T22:50:01 SAST" duration-ms="701" status="PASS">
+        </test-method> <!-- orderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ui.tests.positiveTests.OrderPlacementAndOrderHistory@3e2055d6]" started-at="2025-12-05T12:30:43 SAST" name="tearDown" finished-at="2025-12-05T12:30:49 SAST" duration-ms="6110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ui.tests.positiveTests.OrderPlacementAndOrderHistory -->
+    </test> <!-- OrderPlacementAndOrderHistory -->
+    <test started-at="2025-12-05T12:30:53 SAST" name="API-E2E-Test" finished-at="2025-12-05T12:31:22 SAST" duration-ms="28927">
+      <class name="api.test.positiveTests.PositiveE2ETests">
+        <test-method signature="createRepoTest(java.util.HashMap)[pri:1, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:30:53 SAST" name="createRepoTest" data-provider="createRepoData" finished-at="2025-12-05T12:31:13 SAST" duration-ms="19691" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=, message=Not Found, statusCode=404}]]>
+                <![CDATA[{name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=https://github.com, statusCode=201}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteRepoWithoutName -->
-      </class> <!-- api.test.negativeTests.DeleteRepoNegativeTest -->
-    </test> <!-- deleteRepoErrorValidation -->
-    <test started-at="2025-12-01T22:50:02 SAST" name="getRepoErrorValidation" finished-at="2025-12-01T22:50:14 SAST" duration-ms="11990">
-      <class name="api.test.negativeTests.GetRepoNegativeTests">
-        <test-method signature="getNonExistantRepo(java.util.HashMap)[pri:0, instance:api.test.negativeTests.GetRepoNegativeTests@5e17553a]" started-at="2025-12-01T22:50:02 SAST" name="getNonExistantRepo" data-provider="getNonExistentRepoProvider" finished-at="2025-12-01T22:50:13 SAST" duration-ms="10891" status="PASS">
+        </test-method> <!-- createRepoTest -->
+        <test-method signature="createRepoTest(java.util.HashMap)[pri:1, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:13 SAST" name="createRepoTest" data-provider="createRepoData" finished-at="2025-12-05T12:31:15 SAST" duration-ms="1971" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Non-Existent-Repo, message=Not Found, statusCode=404}]]>
+                <![CDATA[{name=my-second-repo, description=This is my second repository, private=true, homepage=https://github.com, statusCode=201}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getNonExistantRepo -->
-        <test-method signature="getRepoWithWithoutNameParam(java.util.HashMap)[pri:0, instance:api.test.negativeTests.GetRepoNegativeTests@5e17553a]" started-at="2025-12-01T22:50:13 SAST" name="getRepoWithWithoutNameParam" data-provider="getRepoWithoutNameProvider" finished-at="2025-12-01T22:50:14 SAST" duration-ms="857" status="PASS">
+        </test-method> <!-- createRepoTest -->
+        <test-method signature="getRepoTest(java.util.HashMap)[pri:2, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:15 SAST" name="getRepoTest" data-provider="createRepoData" finished-at="2025-12-05T12:31:16 SAST" duration-ms="1218" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=, message=Not Found, statusCode=404}]]>
+                <![CDATA[{name=my-new-repo, description=This is my new repository, private=false, is_template=true, homepage=https://github.com, statusCode=201}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getRepoWithWithoutNameParam -->
-      </class> <!-- api.test.negativeTests.GetRepoNegativeTests -->
-    </test> <!-- getRepoErrorValidation -->
-    <test started-at="2025-12-01T22:50:14 SAST" name="updateRepoErrorValidation" finished-at="2025-12-01T22:50:19 SAST" duration-ms="4901">
-      <class name="api.test.negativeTests.UpdateRepoNegativeTest">
-        <test-method signature="updateRepoWithEmptyName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.UpdateRepoNegativeTest@43015c69]" started-at="2025-12-01T22:50:14 SAST" name="updateRepoWithEmptyName" data-provider="updateRepoWithoutNameProvider" finished-at="2025-12-01T22:50:17 SAST" duration-ms="3199" status="PASS">
+        </test-method> <!-- getRepoTest -->
+        <test-method signature="getRepoTest(java.util.HashMap)[pri:2, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:17 SAST" name="getRepoTest" data-provider="createRepoData" finished-at="2025-12-05T12:31:18 SAST" duration-ms="992" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=, message=Not Found, statusCode=404}]]>
+                <![CDATA[{name=my-second-repo, description=This is my second repository, private=true, homepage=https://github.com, statusCode=201}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateRepoWithEmptyName -->
-        <test-method signature="updateRepoWithNonExistentName(java.util.HashMap)[pri:0, instance:api.test.negativeTests.UpdateRepoNegativeTest@43015c69]" started-at="2025-12-01T22:50:17 SAST" name="updateRepoWithNonExistentName" data-provider="updateNonExistentRepoProvider" finished-at="2025-12-01T22:50:19 SAST" duration-ms="1417" status="PASS">
+        </test-method> <!-- getRepoTest -->
+        <test-method signature="updateRepoTest(java.util.HashMap)[pri:3, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:18 SAST" name="updateRepoTest" data-provider="updateRepoData" finished-at="2025-12-05T12:31:19 SAST" duration-ms="1209" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{name=Non-Existent-Repo, message=Not Found, statusCode=404}]]>
+                <![CDATA[{name=my-new-repo, description=Updated description for my e-commerce site repository}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateRepoWithNonExistentName -->
-      </class> <!-- api.test.negativeTests.UpdateRepoNegativeTest -->
-    </test> <!-- updateRepoErrorValidation -->
+        </test-method> <!-- updateRepoTest -->
+        <test-method signature="updateRepoTest(java.util.HashMap)[pri:3, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:19 SAST" name="updateRepoTest" data-provider="updateRepoData" finished-at="2025-12-05T12:31:20 SAST" duration-ms="1287" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=my-second-repo, description=Updated description for my second repository}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateRepoTest -->
+        <test-method signature="deleteRepoTest(java.lang.String)[pri:4, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:20 SAST" name="deleteRepoTest" data-provider="repoNamesProvider" finished-at="2025-12-05T12:31:21 SAST" duration-ms="938" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[my-new-repo]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRepoTest -->
+        <test-method signature="deleteRepoTest(java.lang.String)[pri:4, instance:api.test.positiveTests.PositiveE2ETests@495ee280]" started-at="2025-12-05T12:31:21 SAST" name="deleteRepoTest" data-provider="repoNamesProvider" finished-at="2025-12-05T12:31:22 SAST" duration-ms="1104" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[my-second-repo]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRepoTest -->
+      </class> <!-- api.test.positiveTests.PositiveE2ETests -->
+    </test> <!-- API-E2E-Test -->
   </suite> <!-- Suite -->
 </testng-results>
